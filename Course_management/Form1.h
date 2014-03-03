@@ -1,5 +1,6 @@
 #pragma once
 #include "Form2.h"
+#include "facultyhome.h"
 namespace Course_management {
 
 	using namespace System;
@@ -191,6 +192,11 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 		 {
 			 if(String::Compare(comboBox1->Text,"ADMIN")==0)
 				{ Form2^ obj1= gcnew Form2;
+			 obj1->Show(this);
+			 this->Hide();}
+
+			  if(String::Compare(comboBox1->Text,"FACULTY")==0)
+				{ facultyhome^ obj1= gcnew facultyhome;
 			 obj1->Show(this);
 			 this->Hide();}
 		 }

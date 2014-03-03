@@ -1,33 +1,37 @@
-﻿Build started 2/18/2014 1:55:34 PM.
-     1>Project "C:\Users\Kushal\Documents\Visual Studio 2010\Projects\Course_management\Course_management\Course_management.vcxproj" on node 2 (build target(s)).
+﻿Build started 03-Mar-14 10:49:24 PM.
+     1>Project "C:\Users\dell\Documents\GitHub\Course_Management_System\Course_management\Course_management.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Touching "Debug\Course_management.unsuccessfulbuild".
+         Creating "Debug\Course_management.unsuccessfulbuild" because "AlwaysCreate" was specified.
        GenerateTargetFrameworkMonikerAttribute:
        Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
        ClCompile:
          All outputs are up-to-date.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Course_management.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt Course_management.cpp /clr:nostdlib 
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Course_management.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt Course_management.cpp facultyhome.cpp /clr:nostdlib 
          Course_management.cpp
+         facultyhome.cpp
+         Generating Code...
          All outputs are up-to-date.
        CoreResGen:
-         No resources are out of date with respect to their source files. Skipping resource generation.
+         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\resgen.exe" /useSourcePath /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /compile facultyhome.resx,Debug\Course_management.facultyhome.resources
+         Processing resource file "facultyhome.resx" into "Debug\Course_management.facultyhome.resources".
        ResourceCompile:
          All outputs are up-to-date.
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Kushal\Documents\Visual Studio 2010\Projects\Course_management\Debug\Course_management.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\Course_management.Form1.resources /ASSEMBLYRESOURCE:Debug\Course_management.Form2.resources /MANIFEST /ManifestFile:"Debug\Course_management.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Kushal\Documents\Visual Studio 2010\Projects\Course_management\Debug\Course_management.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\dell\Documents\GitHub\Course_Management_System\Debug\Course_management.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\Course_management.facultyhome.resources /ASSEMBLYRESOURCE:Debug\Course_management.Form1.resources /ASSEMBLYRESOURCE:Debug\Course_management.Form2.resources /MANIFEST /ManifestFile:"Debug\Course_management.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\dell\Documents\GitHub\Course_Management_System\Debug\Course_management.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
          Debug\AssemblyInfo.obj
          Debug\Course_management.obj
+         Debug\facultyhome.obj
          Debug\Form2.obj
          Debug\stdafx.obj
          "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
-         Course_management.vcxproj -> C:\Users\Kushal\Documents\Visual Studio 2010\Projects\Course_management\Debug\Course_management.exe
+         Course_management.vcxproj -> C:\Users\dell\Documents\GitHub\Course_Management_System\Debug\Course_management.exe
        Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Kushal\Documents\Visual Studio 2010\Projects\Course_management\Debug\Course_management.exe;#1" /manifest Debug\Course_management.exe.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\dell\Documents\GitHub\Course_Management_System\Debug\Course_management.exe;#1" /manifest Debug\Course_management.exe.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file "Debug\Course_management.unsuccessfulbuild".
          Touching "Debug\Course_management.lastbuildstate".
-     1>Done Building Project "C:\Users\Kushal\Documents\Visual Studio 2010\Projects\Course_management\Course_management\Course_management.vcxproj" (build target(s)).
+     1>Done Building Project "C:\Users\dell\Documents\GitHub\Course_Management_System\Course_management\Course_management.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.50
+Time Elapsed 00:00:02.57
