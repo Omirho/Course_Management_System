@@ -36,6 +36,18 @@
     <ClCompile Include="facultyhome.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AppointmentAdder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="removeappointment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="notes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -53,6 +65,18 @@
     <ClInclude Include="facultyhome.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AppointmentAdder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="removeappointment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StudentList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="notes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -64,6 +88,15 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="facultyhome.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppointmentAdder.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="removeappointment.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>
