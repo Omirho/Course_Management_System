@@ -11,6 +11,9 @@
 #include <string.h>
 namespace Course_management
 {
+	//------------si
+
+
 	Void Form1::label4_Click(System::Object^ sender, System::EventArgs^ e)
 	{
 		signupform^ obj=gcnew signupform;
@@ -32,6 +35,7 @@ Void Form1::button1_Click(System::Object^  sender, System::EventArgs^  e)
 			 {
 				 conDataBase->Open();
 				 myReader=cmdDataBase->ExecuteReader();
+
 				 while(myReader->Read())
 				 {
 					 String^ k=myReader->GetString(1);
@@ -48,8 +52,8 @@ Void Form1::button1_Click(System::Object^  sender, System::EventArgs^  e)
 			adminmainform^ obj1= gcnew adminmainform;
 			 if(String::Compare(comboBox1->Text,"ADMIN")==0)
 			 {
-			// obj1->Show(this);
-			// this->Hide();
+			 obj1->Show(this);
+			 this->Hide();
 			 }
 			 Int32 x=addme(2,3);
 			 //obj1->Show(this);

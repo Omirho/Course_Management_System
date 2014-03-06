@@ -1,3 +1,7 @@
+//******************************the following code is for sign up form **************************************
+//-------------------the code is written by kushal Sriavstava for Course management Project-------------------
+//************************
+
 #include "StdAfx.h"
 #include "signupform.h"
 #include <iostream>
@@ -14,8 +18,15 @@ namespace Course_management
 		label6->Text="Password*";
 		label5->Text="Confirm Password*";
 		label7->Text="Account Type*";
+		label8->Text="Roll Number";
+		label9->Text="Select Security Question?*";
+		label10->Text="Security answer*";
 	    comboBox1->Items->Add("Faculty");
 		comboBox1->Items->Add("Student");
+		comboBox2->Items->Add("what is the name of your first pet?");
+		comboBox2->Items->Add("what is the name of your first crush in IITG?");
+		comboBox2->Items->Add("what is the your mothers maiden name?");
+		comboBox2->Items->Add("what is the name of your first school?");
 		label4->Hide();
 	}
 	Void connect2database(String^ dbase)
@@ -28,10 +39,47 @@ namespace Course_management
 		String^ usertype= comboBox1->Text;
 		String^ username= textBox2->Text;
 		String^ pass=textBox4->Text;
-		String^ finalpass= textBox5->Text;int f1=0,f2=0,f=0;
-		if(String::IsNullOrEmpty(name)||String::IsNullOrEmpty(username)||String::IsNullOrEmpty(usertype)||String::IsNullOrEmpty(pass))
+		String^ securityques=comboBox2->Text;
+		String^ ans=textBox6->Text;
+		String^ r=textBox3->Text;
+		//int roll=int::Parse(r);
+		String^ finalpass= textBox5->Text;int f1=0,f2=0,f=0;int key =1;
+
+
+		String^ connectstr=L"datasource=localhost;port=3306;username=root;password=project";
+		MySqlConnection^ conDataBase=gcnew MySqlConnection(connectstr);
+	    MySqlCommand^ cmdDataBase=gcnew MySqlCommand("SELECT * FROM users.signuprequests;",conDataBase);
+		MySqlDataReader^ myReader;
+		try
 		{
-			f=1;
+			conDataBase->Open();
+			myReader=cmdDataBase->ExecuteReader();
+
+			while(myReader->Read())
+			{
+				String^ use=myReader->GetString(2);
+				if(String::Compare(use,username)==0)
+					f=1;
+				key=key+1;
+			}
+
+		}
+		catch(Exception^ ex){
+			MessageBox::Show(ex->Message);
+		}
+
+
+
+
+
+		if(f==1)
+		{
+			label4->Show();
+			label4->Text="username already exists,try another one";
+		}
+		else if(String::IsNullOrEmpty(ans)||String::IsNullOrEmpty(securityques)||String::IsNullOrEmpty(name)||String::IsNullOrEmpty(username)||String::IsNullOrEmpty(usertype)||String::IsNullOrEmpty(pass))
+		{
+			
 			label4->Show();
 			label4->Text="* marked fields are required";
 		}
@@ -63,7 +111,7 @@ namespace Course_management
 			try
 			{
 				conDataBase->Open();
-				String^ cmdText = "INSERT INTO users.loginids (`S No.`,`userid`,`password`,`type`) VALUES('10','"+username+"','"+pass+"','"+usertype+"');";
+				String^ cmdText = "INSERT INTO users.signuprequests (`SNo.`,`Name`,`username`,`password`,`usertype`,`securityquestion`,`securityans`,`RollNo.`) VALUES('"+key+"','"+name+"','"+username+"','"+pass+"','"+usertype+"','"+securityques+"','"+ans+"','"+r+"');";
 				MySqlCommand^ cmdDataBase=gcnew MySqlCommand(cmdText,conDataBase);
 				cmdDataBase->Prepare();
 				cmdDataBase->ExecuteNonQuery();

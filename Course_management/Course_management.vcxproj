@@ -76,6 +76,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <Reference Include="MySql.Data" />
+    <Reference Include="MySql.Data" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -97,6 +98,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="studentrecord.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="adminmainform.h">
@@ -113,6 +115,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="studentrecord.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
@@ -130,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="signupform.resx">
       <DependentUpon>signupform.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="studentrecord.resx">
+      <DependentUpon>studentrecord.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

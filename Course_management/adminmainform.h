@@ -129,6 +129,7 @@ namespace Course_management {
 			this->button6->TabIndex = 6;
 			this->button6->Text = L"STUDENT RECORDS";
 			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &adminmainform::button6_Click);
 			// 
 			// button7
 			// 
@@ -154,10 +155,19 @@ namespace Course_management {
 			this->Controls->Add(this->label1);
 			this->Name = L"adminmainform";
 			this->Text = L"adminmainform";
+			this->Load += gcnew System::EventHandler(this, &adminmainform::adminmainform_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	private: System::Void adminmainform_Load(System::Object^  sender, System::EventArgs^  e) {
+			 }
+//private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) ;
+		 
+//private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) ;
+		 
+private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) ;
+		 
+};
 }
