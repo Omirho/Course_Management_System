@@ -3,7 +3,7 @@
 #include "removeappointment.h"
 #include "StudentList.h"
 #include "notes.h"
-//#include "Form1.h"
+#include "Form1.h"
 namespace Course_management {
 
 	using namespace System;
@@ -61,7 +61,7 @@ namespace Course_management {
 	private: System::Windows::Forms::MonthCalendar^  monthCalendar1;
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::DataGridView^  dataGridView1;
+
 	private: System::Windows::Forms::Label^  label10;
 	private: System::Windows::Forms::Label^  label9;
 	private: System::Windows::Forms::ComboBox^  comboBox1;
@@ -93,6 +93,7 @@ namespace Course_management {
 	private: Microsoft::VisualBasic::PowerPacks::LineShape^  lineShape5;
 	private: Microsoft::VisualBasic::PowerPacks::LineShape^  lineShape4;
 	private: System::Windows::Forms::Button^  button9;
+	private: System::Windows::Forms::DataGridView^  dataGridView1;
 	private: System::ComponentModel::IContainer^  components;
 
 
@@ -113,7 +114,6 @@ namespace Course_management {
 			this->components = (gcnew System::ComponentModel::Container());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->monthCalendar1 = (gcnew System::Windows::Forms::MonthCalendar());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -160,13 +160,14 @@ namespace Course_management {
 			this->lineShape4 = (gcnew Microsoft::VisualBasic::PowerPacks::LineShape());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->button9 = (gcnew System::Windows::Forms::Button());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView1))->BeginInit();
 			this->tabPage2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView2))->BeginInit();
 			this->tabPage3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -200,14 +201,7 @@ namespace Course_management {
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Personal";
 			this->tabPage1->UseVisualStyleBackColor = true;
-			// 
-			// dataGridView1
-			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(7, 64);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(746, 169);
-			this->dataGridView1->TabIndex = 11;
+			this->tabPage1->Click += gcnew System::EventHandler(this, &facultyhome::tabPage1_Click);
 			// 
 			// monthCalendar1
 			// 
@@ -675,6 +669,14 @@ namespace Course_management {
 			this->button9->UseVisualStyleBackColor = true;
 			this->button9->Click += gcnew System::EventHandler(this, &facultyhome::button9_Click);
 			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(259, 129);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->Size = System::Drawing::Size(240, 150);
+			this->dataGridView1->TabIndex = 13;
+			// 
 			// facultyhome
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -688,13 +690,13 @@ namespace Course_management {
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView1))->EndInit();
 			this->tabPage2->ResumeLayout(false);
 			this->tabPage2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView2))->EndInit();
 			this->tabPage3->ResumeLayout(false);
 			this->tabPage3->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -761,6 +763,8 @@ private: System::Void button9_Click(System::Object^  sender, System::EventArgs^ 
 			//Form1::Show();
 		}
 private: System::Void facultyhome_Load(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void tabPage1_Click(System::Object^  sender, System::EventArgs^  e) {
 		 }
 };
 }

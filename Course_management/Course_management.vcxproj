@@ -75,15 +75,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Reference Include="*Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-    <Reference Include="*System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-    <Reference Include="*System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-    <Reference Include="*System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-    <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs" />
+    <Reference Include="MySql.Data" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -93,24 +87,19 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AppointmentAdder.cpp" />
+    <ClCompile Include="admin main form.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Course_management.cpp" />
-    <ClCompile Include="facultyhome.cpp" />
+    <ClCompile Include="Form11.cpp" />
     <ClCompile Include="Form2.cpp" />
-    <ClCompile Include="notes.cpp" />
-    <ClCompile Include="removeappointment.cpp" />
+    <ClCompile Include="signupform.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="StudentList.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AppointmentAdder.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="facultyhome.h">
+    <ClInclude Include="adminmainform.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Form1.h">
@@ -119,27 +108,18 @@
     <ClInclude Include="Form2.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="notes.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="removeappointment.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="resource.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="StudentList.h">
+    <ClInclude Include="signupform.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AppointmentAdder.resx">
-      <DependentUpon>AppointmentAdder.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="facultyhome.resx">
-      <DependentUpon>facultyhome.h</DependentUpon>
+    <EmbeddedResource Include="adminmainform.resx">
+      <DependentUpon>adminmainform.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resX">
       <DependentUpon>Form1.h</DependentUpon>
@@ -148,14 +128,8 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="notes.resx">
-      <DependentUpon>notes.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="removeappointment.resx">
-      <DependentUpon>removeappointment.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StudentList.resx">
-      <DependentUpon>StudentList.h</DependentUpon>
+    <EmbeddedResource Include="signupform.resx">
+      <DependentUpon>signupform.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

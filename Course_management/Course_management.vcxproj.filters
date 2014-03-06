@@ -33,19 +33,13 @@
     <ClCompile Include="Form2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="facultyhome.cpp">
+    <ClCompile Include="Form11.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AppointmentAdder.cpp">
+    <ClCompile Include="admin main form.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="removeappointment.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="StudentList.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="notes.cpp">
+    <ClCompile Include="signupform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -62,19 +56,10 @@
     <ClInclude Include="Form2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="facultyhome.h">
+    <ClInclude Include="adminmainform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AppointmentAdder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="removeappointment.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StudentList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="notes.h">
+    <ClInclude Include="signupform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -90,13 +75,7 @@
     <EmbeddedResource Include="Form2.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
-    <EmbeddedResource Include="facultyhome.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppointmentAdder.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="removeappointment.resx">
+    <EmbeddedResource Include="adminmainform.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>
