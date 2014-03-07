@@ -19,10 +19,14 @@ namespace Course_management {
 	public ref class facultyhome : public System::Windows::Forms::Form
 	{
 	public:
-		facultyhome(void)
+		String^ name;
+		String^ userid;
+		facultyhome(String^ n,String^ u)
 		{
 			InitializeComponent();
 			timer1 -> Start();
+			name=n;
+			userid=u;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -203,9 +207,13 @@ namespace Course_management {
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->AllowUserToAddRows = false;
+			this->dataGridView1->AllowUserToDeleteRows = false;
+			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(7, 64);
 			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->Size = System::Drawing::Size(746, 169);
 			this->dataGridView1->TabIndex = 11;
 			// 
@@ -702,7 +710,7 @@ namespace Course_management {
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
 			 }
 	private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
-			//import name of faculty
+			
 
 			 }
 private: System::Void monthCalendar1_DateChanged(System::Object^  sender, System::Windows::Forms::DateRangeEventArgs^  e)
@@ -714,10 +722,19 @@ private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e
 			this -> label6-> Text =datetime.ToString();
 			this -> label7-> Text =datetime.ToString();
 			this -> label8-> Text =datetime.ToString();
+			String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
+			 MySqlConnection^ con=gcnew MySqlConnection(connectstr);
+			 auto da=gcnew MySqlDataAdapter("Select date,text from course_management.calendar where user=\'"+userid+"\';",con);
+			 auto ds=gcnew DataSet;
+			 da->Fill(ds,"std");
+			 dataGridView1->DataSource=ds;
+			 dataGridView1->DataMember="std";
+			 dataGridView1->Refresh();
+			dataGridView1->Refresh();
 		 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) 
 		 {
-			  AppointmentAdder^ obj1= gcnew AppointmentAdder;
+			  AppointmentAdder^ obj1= gcnew AppointmentAdder(userid);
 			 obj1->Show(this);
 			 
 		 }
@@ -761,6 +778,7 @@ private: System::Void button9_Click(System::Object^  sender, System::EventArgs^ 
 			//Form1::Show();
 		}
 private: System::Void facultyhome_Load(System::Object^  sender, System::EventArgs^  e) {
+			 label2->Text=name;
 		 }
 };
 }

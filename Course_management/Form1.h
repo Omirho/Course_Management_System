@@ -234,8 +234,8 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 					 //MessageBox::Show("Here1");
 					 if(count==1)
 					{
-						//MessageBox::Show(reader->GetString(0));
-						facultyhome^ obj1= gcnew facultyhome;
+						String^ n=reader->GetString(0);
+						facultyhome^ obj1= gcnew facultyhome(n,userid);
 						obj1->Show(this);
 						this->Hide();
 					 }

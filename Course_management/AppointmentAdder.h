@@ -15,9 +15,11 @@ namespace Course_management {
 	public ref class AppointmentAdder : public System::Windows::Forms::Form
 	{
 	public:
-		AppointmentAdder(void)
+		String^ userid;
+		AppointmentAdder(String^ u)
 		{
 			InitializeComponent();
+			userid=u;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -65,6 +67,7 @@ namespace Course_management {
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(186, 20);
 			this->dateTimePicker1->TabIndex = 0;
+			this->dateTimePicker1->Value = System::DateTime(2014, 3, 7, 16, 22, 4, 0);
 			// 
 			// label1
 			// 
@@ -115,6 +118,13 @@ namespace Course_management {
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) 
 			 {
 				 // save the contents of textbox and date to database
+				String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
+				MySqlConnection^ con=gcnew MySqlConnection(connectstr);
+				String^ text=textBox1->Text;
+				MySqlCommand^ cmd=gcnew MySqlCommand("INSERT INTO course_management.calendar (`user`, `date`, `text`) VALUES ('"+userid+"', '"+dateTimePicker1->Value.ToString("yyyy-MM-dd")+"', '"+text+"');",con);
+				con->Open();
+				cmd->ExecuteNonQuery();
+				this->Close();
 			 }
-	};
+};
 }
