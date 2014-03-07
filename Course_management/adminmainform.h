@@ -102,6 +102,7 @@ namespace Course_management {
 			this->button3->TabIndex = 3;
 			this->button3->Text = L"ADD A FACULTY";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &adminmainform::button3_Click);
 			// 
 			// button4
 			// 
@@ -111,6 +112,7 @@ namespace Course_management {
 			this->button4->TabIndex = 4;
 			this->button4->Text = L"SEND A NOTIFICATION";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &adminmainform::button4_Click);
 			// 
 			// button5
 			// 
@@ -168,6 +170,11 @@ namespace Course_management {
 //private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) ;
 		 
 private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) ;
+		 
+private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) ;
+		 
+
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) ;
 		 
 };
 }

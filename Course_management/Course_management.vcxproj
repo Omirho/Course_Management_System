@@ -88,11 +88,14 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="addfaculty.cpp" />
+    <ClCompile Include="addStudent.cpp" />
     <ClCompile Include="admin main form.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Course_management.cpp" />
     <ClCompile Include="Form11.cpp" />
     <ClCompile Include="Form2.cpp" />
+    <ClCompile Include="sendmessage.cpp" />
     <ClCompile Include="signupform.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -101,6 +104,12 @@
     <ClCompile Include="studentrecord.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="addfaculty.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="addStudent.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="adminmainform.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -111,6 +120,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="sendmessage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="signupform.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -123,6 +135,12 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="addfaculty.resx">
+      <DependentUpon>addfaculty.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addStudent.resx">
+      <DependentUpon>addStudent.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="adminmainform.resx">
       <DependentUpon>adminmainform.h</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sendmessage.resx">
+      <DependentUpon>sendmessage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="signupform.resx">
       <DependentUpon>signupform.h</DependentUpon>

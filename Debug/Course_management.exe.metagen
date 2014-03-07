@@ -1,6 +1,9 @@
+  Course_management.addfaculty.resources - Embedded, ContainedInManifestFile, 
+  Course_management.addStudent.resources - Embedded, ContainedInManifestFile, 
   Course_management.adminmainform.resources - Embedded, ContainedInManifestFile, 
   Course_management.Form1.resources - Embedded, ContainedInManifestFile, 
   Course_management.Form2.resources - Embedded, ContainedInManifestFile, 
+  Course_management.sendmessage.resources - Embedded, ContainedInManifestFile, 
   Course_management.signupform.resources - Embedded, ContainedInManifestFile, 
   Course_management.studentrecord.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
@@ -34,6 +37,9 @@ Class Course_management.Form1: AutoLayout, AnsiClass, Class, Public, BeforeField
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     addme(Int32, Int32): PrivateScope, Public, HideBySig
+Class Course_management.addfaculty: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Course_management.adminmainform: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -41,5 +47,11 @@ Class Course_management.signupform: AutoLayout, AnsiClass, Class, Public, Before
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Course_management.studentrecord: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Course_management.addStudent: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class Course_management.sendmessage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

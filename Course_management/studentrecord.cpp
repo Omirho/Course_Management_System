@@ -5,6 +5,7 @@
 #include <iostream>
 #include <tchar.h>
 #include <string.h>
+#include "Form1.h"
 
 namespace Course_management
 {
@@ -39,5 +40,11 @@ namespace Course_management
 		}
 
 
+	}
+	Void studentrecord::dataGridView1_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) 
+	{
+		Form1^ obj=gcnew Form1;
+		this->Hide();
+		obj->Show(this);
 	}
 }

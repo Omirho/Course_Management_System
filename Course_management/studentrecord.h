@@ -72,6 +72,7 @@ namespace Course_management {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(342, 281);
 			this->dataGridView1->TabIndex = 0;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &studentrecord::dataGridView1_CellContentClick);
 			// 
 			// label1
 			// 
@@ -105,5 +106,8 @@ namespace Course_management {
 #pragma endregion
 	private: System::Void studentrecord_Load(System::Object^  sender, System::EventArgs^  e) ;
 		
+	private: System::Void dataGridView1_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) ;
+
+			 
 	};
 }

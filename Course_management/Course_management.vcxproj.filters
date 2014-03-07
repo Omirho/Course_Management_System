@@ -45,6 +45,15 @@
     <ClCompile Include="studentrecord.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="addStudent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addfaculty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sendmessage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -68,6 +77,15 @@
     <ClInclude Include="studentrecord.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="addStudent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="addfaculty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sendmessage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -85,6 +103,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="signupform.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="studentrecord.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

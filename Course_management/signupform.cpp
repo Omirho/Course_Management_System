@@ -75,7 +75,7 @@ namespace Course_management
 		if(f==1)
 		{
 			label4->Show();
-			label4->Text="username already exists,try another one";
+			label4->Text="Username already exists,try another one";
 		}
 		else if(String::IsNullOrEmpty(ans)||String::IsNullOrEmpty(securityques)||String::IsNullOrEmpty(name)||String::IsNullOrEmpty(username)||String::IsNullOrEmpty(usertype)||String::IsNullOrEmpty(pass))
 		{
