@@ -190,15 +190,88 @@ namespace Course_management {
 	
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e)
 		 {
+			 String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
+			 MySqlConnection^ con=gcnew MySqlConnection(connectstr);
+			 MySqlDataReader^ reader;
+			 String^ userid=textBox1->Text;
+			 String^ pass=textBox2->Text;
 			 if(String::Compare(comboBox1->Text,"ADMIN")==0)
-				{ Form2^ obj1= gcnew Form2;
-			 obj1->Show(this);
-			 this->Hide();}
-
-			  if(String::Compare(comboBox1->Text,"FACULTY")==0)
-				{ facultyhome^ obj1= gcnew facultyhome;
-			 obj1->Show(this);
-			 this->Hide();}
+			 { 
+				 //MessageBox::Show("SELECT name FROM course_management.admin_list WHERE username=\'"+userid+"\' and password=\'"+pass+"\';");
+				 MySqlCommand^ cmd=gcnew MySqlCommand("SELECT name FROM course_management.admin_list WHERE username=\'"+userid+"\' and password=\'"+pass+"\';",con);
+				 try
+				 {
+					 con->Open();
+					 reader=cmd->ExecuteReader();
+					 int count=0;
+					 while(reader->Read())
+						 count++;
+					 //MessageBox::Show("Here1");
+					 if(count==1)
+					{
+						//MessageBox::Show(reader->GetString(0));
+						Form2^ obj1= gcnew Form2;
+						obj1->Show(this);
+						this->Hide();
+					 }
+					 else
+						 MessageBox::Show("Invalid Username or Password");
+				}
+				catch(Exception^ ex){
+				 MessageBox::Show(ex->Message);
+				 }
+			 }
+			if(String::Compare(comboBox1->Text,"FACULTY")==0)
+			{
+				 MySqlCommand^ cmd=gcnew MySqlCommand("SELECT name FROM course_management.faculty_list WHERE username=\'"+userid+"\' and password=\'"+pass+"\';",con);
+				 try
+				 {
+					 con->Open();
+					 reader=cmd->ExecuteReader();
+					 int count=0;
+					 while(reader->Read())
+						 count++;
+					 //MessageBox::Show("Here1");
+					 if(count==1)
+					{
+						//MessageBox::Show(reader->GetString(0));
+						facultyhome^ obj1= gcnew facultyhome;
+						obj1->Show(this);
+						this->Hide();
+					 }
+					 else
+						 MessageBox::Show("Invalid Username or Password");
+				}
+				catch(Exception^ ex){
+				 MessageBox::Show(ex->Message);
+				 }
+			}
+			if(String::Compare(comboBox1->Text,"STUDENT")==0)
+			{
+				MySqlCommand^ cmd=gcnew MySqlCommand("SELECT name FROM course_management.student_list WHERE username=\'"+userid+"\' and password=\'"+pass+"\';",con);
+				 try
+				 {
+					 con->Open();
+					 reader=cmd->ExecuteReader();
+					 int count=0;
+					 while(reader->Read())
+						 count++;
+					 //MessageBox::Show("Here1");
+					 if(count==1)
+					{
+						//MessageBox::Show(reader->GetString(0));
+						/*facultyhome^ obj1= gcnew facultyhome;
+						obj1->Show(this);
+						this->Hide();*/
+						MessageBox::Show("Correct");
+					 }
+					 else
+						 MessageBox::Show("Invalid Username or Password");
+				}
+				catch(Exception^ ex){
+				 MessageBox::Show(ex->Message);
+				 }
+			}
 		 }
 };
 }
