@@ -1,4 +1,4 @@
-﻿Build started 3/7/2014 8:15:22 PM.
+﻿Build started 3/8/2014 4:00:42 PM.
      1>Project "C:\Users\Kushal\Documents\GitHub\Course_Management_System\Course_management\Course_management.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Course_management.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -6,20 +6,21 @@
        Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
        ClCompile:
          All outputs are up-to-date.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Course_management.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\MySQL\Connector NET 6.8.3\Assemblies\v4.0\MySql.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt sendmessage.cpp /clr:nostdlib 
-         sendmessage.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Course_management.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\MySQL\Connector NET 6.8.3\Assemblies\v4.0\MySql.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt addStudent.cpp /clr:nostdlib 
+         addStudent.cpp
          All outputs are up-to-date.
        CoreResGen:
          No resources are out of date with respect to their source files. Skipping resource generation.
        ResourceCompile:
          All outputs are up-to-date.
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Kushal\Documents\GitHub\Course_Management_System\Debug\Course_management.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\Course_management.addfaculty.resources /ASSEMBLYRESOURCE:Debug\Course_management.addStudent.resources /ASSEMBLYRESOURCE:Debug\Course_management.adminmainform.resources /ASSEMBLYRESOURCE:Debug\Course_management.Form1.resources /ASSEMBLYRESOURCE:Debug\Course_management.Form2.resources /ASSEMBLYRESOURCE:Debug\Course_management.sendmessage.resources /ASSEMBLYRESOURCE:Debug\Course_management.signupform.resources /ASSEMBLYRESOURCE:Debug\Course_management.studentrecord.resources /MANIFEST /ManifestFile:"Debug\Course_management.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Kushal\Documents\GitHub\Course_Management_System\Debug\Course_management.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Kushal\Documents\GitHub\Course_Management_System\Debug\Course_management.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\Course_management.addfaculty.resources /ASSEMBLYRESOURCE:Debug\Course_management.addStudent.resources /ASSEMBLYRESOURCE:Debug\Course_management.adminmainform.resources /ASSEMBLYRESOURCE:Debug\Course_management.deletethisform.resources /ASSEMBLYRESOURCE:Debug\Course_management.Form1.resources /ASSEMBLYRESOURCE:Debug\Course_management.Form2.resources /ASSEMBLYRESOURCE:Debug\Course_management.sendmessage.resources /ASSEMBLYRESOURCE:Debug\Course_management.signupform.resources /ASSEMBLYRESOURCE:Debug\Course_management.studentrecord.resources /MANIFEST /ManifestFile:"Debug\Course_management.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Kushal\Documents\GitHub\Course_Management_System\Debug\Course_management.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
          Debug\addfaculty.obj
          Debug\addStudent.obj
          "Debug\admin main form.obj"
          Debug\AssemblyInfo.obj
          Debug\Course_management.obj
+         Debug\deletethisform.obj
          Debug\Form11.obj
          Debug\Form2.obj
          Debug\sendmessage.obj
@@ -37,4 +38,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.81
+Time Elapsed 00:00:03.58

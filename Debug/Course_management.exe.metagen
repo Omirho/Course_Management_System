@@ -1,6 +1,7 @@
   Course_management.addfaculty.resources - Embedded, ContainedInManifestFile, 
   Course_management.addStudent.resources - Embedded, ContainedInManifestFile, 
   Course_management.adminmainform.resources - Embedded, ContainedInManifestFile, 
+  Course_management.deletethisform.resources - Embedded, ContainedInManifestFile, 
   Course_management.Form1.resources - Embedded, ContainedInManifestFile, 
   Course_management.Form2.resources - Embedded, ContainedInManifestFile, 
   Course_management.sendmessage.resources - Embedded, ContainedInManifestFile, 
@@ -50,6 +51,21 @@ Class Course_management.studentrecord: AutoLayout, AnsiClass, Class, Public, Bef
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Course_management.addStudent: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Button[] btn1 : Public
+    System.Windows.Forms.Button[] btn2 : Public
+    System.Windows.Forms.TextBox[] txt : Public
+    System.Windows.Forms.Label[] label : Public
+    Int32 count : Public
+    Int32 price : Public
+    Int32 width : Public
+    System.String name : Public
+    System.String usertype : Public
+    System.String s : Public
+    System.String type : Public
+Class Course_management.deletethisform: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Course_management.sendmessage: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

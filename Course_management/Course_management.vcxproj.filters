@@ -54,6 +54,9 @@
     <ClCompile Include="sendmessage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="deletethisform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -86,6 +89,9 @@
     <ClInclude Include="sendmessage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="deletethisform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -106,6 +112,15 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="studentrecord.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addfaculty.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addStudent.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sendmessage.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

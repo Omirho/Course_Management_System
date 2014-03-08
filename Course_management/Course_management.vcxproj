@@ -93,6 +93,7 @@
     <ClCompile Include="admin main form.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Course_management.cpp" />
+    <ClCompile Include="deletethisform.cpp" />
     <ClCompile Include="Form11.cpp" />
     <ClCompile Include="Form2.cpp" />
     <ClCompile Include="sendmessage.cpp" />
@@ -111,6 +112,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="adminmainform.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="deletethisform.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Form1.h">
@@ -143,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="adminmainform.resx">
       <DependentUpon>adminmainform.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deletethisform.resx">
+      <DependentUpon>deletethisform.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resX">
       <DependentUpon>Form1.h</DependentUpon>

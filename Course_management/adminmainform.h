@@ -84,6 +84,7 @@ namespace Course_management {
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"ADD A STUDENT";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &adminmainform::button1_Click);
 			// 
 			// button2
 			// 
@@ -122,6 +123,7 @@ namespace Course_management {
 			this->button5->TabIndex = 5;
 			this->button5->Text = L"REQUESTS AND NOTIFICATIONS";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &adminmainform::button5_Click);
 			// 
 			// button6
 			// 
@@ -157,14 +159,13 @@ namespace Course_management {
 			this->Controls->Add(this->label1);
 			this->Name = L"adminmainform";
 			this->Text = L"adminmainform";
-			this->Load += gcnew System::EventHandler(this, &adminmainform::adminmainform_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void adminmainform_Load(System::Object^  sender, System::EventArgs^  e) {
-			 }
+	//private: System::Void adminmainform_Load(System::Object^  sender, System::EventArgs^  e) {
+	//		 }
 //private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) ;
 		 
 //private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) ;
@@ -175,6 +176,10 @@ private: System::Void button4_Click(System::Object^  sender, System::EventArgs^ 
 		 
 
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) ;
+		 
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) ;
+		 
+private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) ;
 		 
 };
 }
