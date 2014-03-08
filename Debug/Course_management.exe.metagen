@@ -54,9 +54,10 @@ Class Course_management.addStudent: AutoLayout, AnsiClass, Class, Public, Before
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
-    System.Windows.Forms.Button[] btn1 : Public
-    System.Windows.Forms.Button[] btn2 : Public
+    System.String[] usrname : Public
     System.Windows.Forms.TextBox[] txt : Public
+    System.Windows.Forms.RadioButton[] radio1 : Public
+    System.Windows.Forms.RadioButton[] radio2 : Public
     System.Windows.Forms.Label[] label : Public
     Int32 count : Public
     Int32 price : Public

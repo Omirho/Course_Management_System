@@ -16,16 +16,19 @@ namespace Course_management {
 	{
 	public:
 
-		array<Button^ >^ btn1;
-		array<Button^ >^ btn2;
+		/*array<Button^ >^ btn1;
+		array<Button^ >^ btn2;*/
+		array<String ^>^ usrname ;
 		array<TextBox^ >^ txt;
-		//array<RadioButton^ >^ radio;
+		array<RadioButton^ >^ radio1;
+		array<RadioButton^ >^ radio2;
 		array<Label^ >^ label;
 		int count,price,width;
 		String^ name;
 		String^ usertype;
 		String^ s;
 	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Button^  button1;
 	public: 
 		String^ type;
 
@@ -36,18 +39,22 @@ namespace Course_management {
 			//
 			//TODO: Add the constructor code here
 			//
+			//int j;
+			//this->btn1[j]->Click += gcnew System::EventHandler(this->ClickHandler);
 
-			btn1 = gcnew array<Button^ >(30);
-			btn2 = gcnew array<Button^ >(30);
-			//radio = gcnew array<RadioButton^ >(30);
+
+		//	btn1 = gcnew array<Button^ >(30);
+			//btn2 = gcnew array<Button^ >(30);
+			radio1 = gcnew array<RadioButton^ >(30);
+			radio2 = gcnew array<RadioButton^ >(30);
 			txt = gcnew array<TextBox^ >(30);
 			label = gcnew array<Label^ >(30);
 			for(int i =0;i<25;i++)
 			{
 				//radio[i] = gcnew RadioButton;
 				txt[i] = gcnew TextBox;
-				btn1[i] = gcnew Button;
-				btn2[i] = gcnew Button;
+				radio1[i] = gcnew RadioButton;
+				radio2[i] = gcnew RadioButton;
 				label[i] = gcnew Label;
 			}
 			name = "";
@@ -98,6 +105,7 @@ namespace Course_management {
 		{
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// flowLayoutPanel1
@@ -110,7 +118,7 @@ namespace Course_management {
 			this->flowLayoutPanel1->FlowDirection = System::Windows::Forms::FlowDirection::TopDown;
 			this->flowLayoutPanel1->Location = System::Drawing::Point(35, 39);
 			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
-			this->flowLayoutPanel1->Size = System::Drawing::Size(361, 134);
+			this->flowLayoutPanel1->Size = System::Drawing::Size(361, 133);
 			this->flowLayoutPanel1->TabIndex = 6;
 			// 
 			// label1
@@ -122,11 +130,27 @@ namespace Course_management {
 			this->label1->TabIndex = 7;
 			this->label1->Text = L"label1";
 			// 
+			// button1
+			// 
+			this->button1->Anchor = System::Windows::Forms::AnchorStyles::Bottom;
+			this->button1->BackColor = System::Drawing::Color::Red;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::Teal;
+			this->button1->Location = System::Drawing::Point(165, 198);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(88, 30);
+			this->button1->TabIndex = 8;
+			this->button1->Text = L"DONE";
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &addStudent::button1_Click);
+			// 
 			// addStudent
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(423, 262);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->flowLayoutPanel1);
 			this->Name = L"addStudent";
@@ -137,7 +161,9 @@ namespace Course_management {
 
 		}
 #pragma endregion
-	private: System::Void addStudent_Load(System::Object^  sender, System::EventArgs^  e); /*listBox1->Items->Add("Sally");
+	private: System::Void addStudent_Load(System::Object^  sender, System::EventArgs^  e); 
+			// public: System::Void ClickHandler(int n);
+				 /*listBox1->Items->Add("Sally");
 			 listBox1->Items->Add("Craig");*/
 
 
@@ -169,5 +195,7 @@ namespace Course_management {
 	private: System::Void dataGridView1_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 			 }
 
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) ;
+		 
 };
 }
