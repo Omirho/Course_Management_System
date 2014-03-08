@@ -48,6 +48,36 @@
     <ClCompile Include="notes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="addingcourse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="removingcourse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="studentform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="admin main form.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addfaculty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="signupform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="addStudent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="deletethisform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="studentrecord.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sendmessage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -77,6 +107,36 @@
     <ClInclude Include="notes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="addingcourse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="removingcourse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="studentform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="adminmainform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="addfaculty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="signupform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="addStudent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="deletethisform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="studentrecord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sendmessage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -103,6 +163,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentList.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addingcourse.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

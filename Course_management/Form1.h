@@ -1,6 +1,9 @@
 #pragma once
 #include "Form2.h"
 #include "facultyhome.h"
+#include "studentform.h"
+#include "signupform.h"
+#include "adminmainform.h"
 namespace Course_management {
 
 	using namespace System;
@@ -42,6 +45,7 @@ namespace Course_management {
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::TextBox^  textBox1;
 	private: System::Windows::Forms::TextBox^  textBox2;
+	private: System::Windows::Forms::Label^  label4;
 			 //	private: System::Windows::Forms::CheckedListBox^  checkedListBox1;
 	protected: 
 
@@ -68,6 +72,7 @@ namespace Course_management {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -151,6 +156,19 @@ namespace Course_management {
 			this->textBox2->Size = System::Drawing::Size(146, 26);
 			this->textBox2->TabIndex = 6;
 			// 
+			// label4
+			// 
+				this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::Color::Blue;
+			this->label4->Location = System::Drawing::Point(416, 92);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(63, 16);
+			this->label4->TabIndex = 7;
+			this->label4->Text = L"Sign Up";
+			this->label4->Click += gcnew System::EventHandler(this, &Form1::label4_Click);
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -160,6 +178,7 @@ namespace Course_management {
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(128)));
 			this->ClientSize = System::Drawing::Size(530, 326);
+			this->Controls->Add(this->label4);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label3);
@@ -188,6 +207,13 @@ namespace Course_management {
             this->comboBox1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			 }
 	
+	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		signupform^ obj=gcnew signupform;
+		obj->Show(this);
+		this->Hide();
+	}
+
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e)
 		 {
 			 String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
@@ -210,7 +236,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 					 if(count==1)
 					{
 						//MessageBox::Show(reader->GetString(0));
-						Form2^ obj1= gcnew Form2;
+						adminmainform^ obj1= gcnew adminmainform;
 						obj1->Show(this);
 						this->Hide();
 					 }
@@ -263,6 +289,10 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 						/*facultyhome^ obj1= gcnew facultyhome;
 						obj1->Show(this);
 						this->Hide();*/
+						String^ n=reader->GetString(0);
+						studentform^ obj1= gcnew studentform(n,userid);
+						obj1->Show(this);
+						this->Hide();
 						MessageBox::Show("Correct");
 					 }
 					 else

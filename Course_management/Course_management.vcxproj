@@ -94,21 +94,46 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="addfaculty.cpp" />
+    <ClCompile Include="addingcourse.cpp" />
+    <ClCompile Include="addStudent.cpp" />
+    <ClCompile Include="admin main form.cpp" />
     <ClCompile Include="AppointmentAdder.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Course_management.cpp" />
+    <ClCompile Include="deletethisform.cpp" />
     <ClCompile Include="facultyhome.cpp" />
     <ClCompile Include="Form2.cpp" />
     <ClCompile Include="notes.cpp" />
     <ClCompile Include="removeappointment.cpp" />
+    <ClCompile Include="removingcourse.cpp" />
+    <ClCompile Include="sendmessage.cpp" />
+    <ClCompile Include="signupform.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="studentform.cpp" />
     <ClCompile Include="StudentList.cpp" />
+    <ClCompile Include="studentrecord.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="addfaculty.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="addingcourse.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="addStudent.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="adminmainform.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="AppointmentAdder.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="deletethisform.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="facultyhome.h">
@@ -126,9 +151,24 @@
     <ClInclude Include="removeappointment.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="removingcourse.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="sendmessage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="signupform.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="studentform.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="StudentList.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="studentrecord.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -136,6 +176,12 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="addingcourse.resx">
+      <DependentUpon>addingcourse.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="adminmainform.resx">
+      <DependentUpon>adminmainform.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppointmentAdder.resx">
       <DependentUpon>AppointmentAdder.h</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +200,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="removeappointment.resx">
       <DependentUpon>removeappointment.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="removingcourse.resx">
+      <DependentUpon>removingcourse.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="studentform.resx">
+      <DependentUpon>studentform.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentList.resx">
       <DependentUpon>StudentList.h</DependentUpon>

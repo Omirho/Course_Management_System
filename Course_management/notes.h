@@ -142,6 +142,7 @@ namespace Course_management {
 			this->Controls->Add(this->shapeContainer1);
 			this->Name = L"notes";
 			this->Text = L"notes";
+			this->Load += gcnew System::EventHandler(this, &notes::notes_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -167,5 +168,7 @@ namespace Course_management {
 				  
 				  }
 			 }
+private: System::Void notes_Load(System::Object^  sender, System::EventArgs^  e) {
+		 }
 };
 }

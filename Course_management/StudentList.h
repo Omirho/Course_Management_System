@@ -15,9 +15,11 @@ namespace Course_management {
 	public ref class StudentList : public System::Windows::Forms::Form
 	{
 	public:
-		StudentList(void)
+		String^ cn;
+		StudentList(String^ a)
 		{
 			InitializeComponent();
+			cn=a;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -70,9 +72,13 @@ namespace Course_management {
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->AllowUserToAddRows = false;
+			this->dataGridView1->AllowUserToDeleteRows = false;
+			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(23, 50);
 			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->Size = System::Drawing::Size(652, 169);
 			this->dataGridView1->TabIndex = 1;
 			// 
@@ -85,6 +91,7 @@ namespace Course_management {
 			this->Controls->Add(this->label1);
 			this->Name = L"StudentList";
 			this->Text = L"StudentList";
+			this->Load += gcnew System::EventHandler(this, &StudentList::StudentList_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -93,7 +100,17 @@ namespace Course_management {
 #pragma endregion
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) 
 			 {
-				 //Name of course
+			 }
+	private: System::Void StudentList_Load(System::Object^  sender, System::EventArgs^  e) {
+			String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
+			 MySqlConnection^ con=gcnew MySqlConnection(connectstr);
+			 //MySqlDataReader^ reader;
+			 auto da1=gcnew MySqlDataAdapter("Select roll_number,name,department from course_management.student_list where `"+cn+"`='1';",con);
+			 auto ds1=gcnew DataSet;
+			 da1->Fill(ds1,"std");
+			 dataGridView1->DataSource=ds1;
+			 dataGridView1->DataMember="std";
+			 dataGridView1->Refresh();
 			 }
 	};
 }

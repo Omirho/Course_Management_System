@@ -3,7 +3,8 @@
 #include "removeappointment.h"
 #include "StudentList.h"
 #include "notes.h"
-//#include "Form1.h"
+#include "addingcourse.h"
+#include "removingcourse.h"
 namespace Course_management {
 
 	using namespace System;
@@ -20,6 +21,13 @@ namespace Course_management {
 	{
 	public:
 		String^ name;
+
+	public: 
+
+
+
+
+	public: 
 		String^ userid;
 		facultyhome(String^ n,String^ u)
 		{
@@ -209,7 +217,7 @@ namespace Course_management {
 			// 
 			this->dataGridView1->AllowUserToAddRows = false;
 			this->dataGridView1->AllowUserToDeleteRows = false;
-			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::DisplayedCells;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(7, 64);
 			this->dataGridView1->Name = L"dataGridView1";
@@ -370,12 +378,13 @@ namespace Course_management {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(638, 23);
+			this->button5->Location = System::Drawing::Point(638, 36);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(97, 26);
 			this->button5->TabIndex = 11;
 			this->button5->Text = L"Remove Course";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &facultyhome::button5_Click);
 			// 
 			// label12
 			// 
@@ -390,12 +399,13 @@ namespace Course_management {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(535, 23);
+			this->button4->Location = System::Drawing::Point(535, 36);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(97, 26);
 			this->button4->TabIndex = 8;
 			this->button4->Text = L"Add Course";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &facultyhome::button4_Click);
 			// 
 			// button3
 			// 
@@ -449,9 +459,13 @@ namespace Course_management {
 			// 
 			// dataGridView2
 			// 
+			this->dataGridView2->AllowUserToAddRows = false;
+			this->dataGridView2->AllowUserToDeleteRows = false;
+			this->dataGridView2->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView2->Location = System::Drawing::Point(26, 68);
 			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->ReadOnly = true;
 			this->dataGridView2->Size = System::Drawing::Size(709, 85);
 			this->dataGridView2->TabIndex = 1;
 			// 
@@ -625,9 +639,12 @@ namespace Course_management {
 			// 
 			// dataGridView3
 			// 
+			this->dataGridView3->AllowUserToAddRows = false;
+			this->dataGridView3->AllowUserToDeleteRows = false;
 			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView3->Location = System::Drawing::Point(25, 38);
 			this->dataGridView3->Name = L"dataGridView3";
+			this->dataGridView3->ReadOnly = true;
 			this->dataGridView3->Size = System::Drawing::Size(711, 160);
 			this->dataGridView3->TabIndex = 4;
 			// 
@@ -687,7 +704,7 @@ namespace Course_management {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(772, 457);
+			this->ClientSize = System::Drawing::Size(776, 457);
 			this->Controls->Add(this->button9);
 			this->Controls->Add(this->tabControl1);
 			this->Name = L"facultyhome";
@@ -722,15 +739,6 @@ private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e
 			this -> label6-> Text =datetime.ToString();
 			this -> label7-> Text =datetime.ToString();
 			this -> label8-> Text =datetime.ToString();
-			String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
-			 MySqlConnection^ con=gcnew MySqlConnection(connectstr);
-			 auto da=gcnew MySqlDataAdapter("Select date,text from course_management.calendar where user=\'"+userid+"\';",con);
-			 auto ds=gcnew DataSet;
-			 da->Fill(ds,"std");
-			 dataGridView1->DataSource=ds;
-			 dataGridView1->DataMember="std";
-			 dataGridView1->Refresh();
-			dataGridView1->Refresh();
 		 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) 
 		 {
@@ -760,8 +768,15 @@ private: System::Void button3_Click(System::Object^  sender, System::EventArgs^ 
 		 {
 			 //if(String::Compare(comboBox1->Text,"FACULTY")==0)
 			 //{
-					StudentList^ obj1= gcnew StudentList;
-					obj1->Show(this);
+			 String^ delimStr = ",";
+			 String^ k =  comboBox1->Text;
+			 array<String^>^ words;
+			 array<Char>^ delimiter = delimStr->ToCharArray();
+			 words = k->Split(delimiter);
+				//MessageBox::Show(words[0]);
+				//MessageBox::Show(words[1]);
+			StudentList^ obj1= gcnew StudentList(words[0]+"+"+words[1]);
+			obj1->Show(this);
 			 
 		     //}
 		 }
@@ -779,6 +794,64 @@ private: System::Void button9_Click(System::Object^  sender, System::EventArgs^ 
 		}
 private: System::Void facultyhome_Load(System::Object^  sender, System::EventArgs^  e) {
 			 label2->Text=name;
+			 String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
+			 MySqlConnection^ con=gcnew MySqlConnection(connectstr);
+			 MySqlDataReader^ reader;
+			 auto da1=gcnew MySqlDataAdapter("Select date,text from course_management.calendar where user=\'"+userid+"\';",con);
+			 auto ds1=gcnew DataSet;
+			 da1->Fill(ds1,"std");
+			 dataGridView1->DataSource=ds1;
+			 dataGridView1->DataMember="std";
+			 dataGridView1->Refresh();
+			 auto da2=gcnew MySqlDataAdapter("Select course_management.courses_list.name,course_management.courses_list.course_no,course_management.courses_list.year from course_management.courses_list,course_management.registrations where course_management.registrations.userid='"+userid+"' and course_management.courses_list.columnname=course_management.registrations.coursecolumnname;",con);
+			 auto ds2=gcnew DataSet;
+			 da2->Fill(ds2,"std");
+			 dataGridView2->DataSource=ds2;
+			 dataGridView2->DataMember="std";
+			 dataGridView2->Refresh();
+			 auto da3=gcnew MySqlDataAdapter("Select `from`,`to`,time,description from course_management.messages where `to`='all' or `to`='"+userid+"';",con);
+			 auto ds3=gcnew DataSet;
+			 da3->Fill(ds3,"std");
+			 dataGridView3->DataSource=ds3;
+			 dataGridView3->DataMember="std";
+			 dataGridView3->Refresh();
+			 MySqlCommand^ cmd = gcnew MySqlCommand("Select course_management.courses_list.name,course_management.courses_list.course_no,course_management.courses_list.year from course_management.courses_list,course_management.registrations where course_management.registrations.userid='"+userid+"' and course_management.courses_list.columnname=course_management.registrations.coursecolumnname;",con);
+			 con->Open();
+			 reader=cmd->ExecuteReader();
+			 while(reader->Read())
+			 {
+				 comboBox1->Items->Add((reader->GetString(1))+","+(reader->GetString(2)));
+				 //comboBox1->Items->Add(reader->GetString(2));
+			 }
+			 con->Close();
+			 //comboBox1->DataMember="std";
+			 //comboBox1->Refresh();
+			//to be imported from database
+				 String^ name= "Movies";
+			 String^ path = "c:\\";
+			 array<String^>^ dir = Directory::GetDirectories(path );
+			 for (int i=0; i<dir->Length; i++)
+				//Console::WriteLine(dir[i]);
+			{
+
+//				listBox1->Items->Add( String::Format( dir[i], i ) );
+				//comboBox1->Items->Add( dir[i] );
+				comboBox2->Items->Add( dir[i] );
+			}	
+		 
+		 
+		 
+		 }
+private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) 
+		 {
+			 addingcourse^ obj= gcnew addingcourse(userid);
+			 obj->Show(this);
+		 }
+private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) 
+		 {
+		removingcourse^ obj= gcnew removingcourse(userid);
+			 obj->Show(this);
+		
 		 }
 };
 }
