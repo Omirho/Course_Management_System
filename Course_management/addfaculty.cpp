@@ -47,13 +47,13 @@ namespace Course_management
 		{
 			label7->Hide();
 
-			String^ connectstr=L"datasource=localhost;port=3306;username=root;password=project";
+			String^ connectstr=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
 			MySqlConnection^ conDataBase=gcnew MySqlConnection(connectstr);
 
 			try
 			{
 				conDataBase->Open();
-				String^ cmdText = "INSERT INTO users.facultyrecords (`name`,`username`,`password`,`department`,`courses`) VALUES('"+name+"','"+username+"','"+pass+"','"+dept+"','"+courses+"');";
+				String^ cmdText = "INSERT INTO course_management.faculty_list (`name`,`username`,`password`,`department`) VALUES('"+name+"','"+username+"','"+pass+"','"+dept+"');";
 				MySqlCommand^ cmdDataBase=gcnew MySqlCommand(cmdText,conDataBase);
 				cmdDataBase->Prepare();
 				cmdDataBase->ExecuteNonQuery();
@@ -64,7 +64,7 @@ namespace Course_management
 
 			if(MessageBox::Show("Your request has been sent to the admin for approval \n Do you wish to exit?","FORM CLOSING",MessageBoxButtons::YesNo,MessageBoxIcon::Question) == ::System::Windows::Forms::DialogResult::Yes)
 			{
-				Application::Exit();
+				//Application::Exit();
 			}
 			else
 			{

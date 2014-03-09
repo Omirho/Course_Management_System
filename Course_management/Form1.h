@@ -293,7 +293,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 						studentform^ obj1= gcnew studentform(n,userid);
 						obj1->Show(this);
 						this->Hide();
-						MessageBox::Show("Correct");
+						//MessageBox::Show("Correct");
 					 }
 					 else
 						 MessageBox::Show("Invalid Username or Password");

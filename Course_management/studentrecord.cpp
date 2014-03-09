@@ -17,9 +17,9 @@ namespace Course_management
 		
 		
 		//----------create a connetion to the database and display the record in the table form 
-		String^ connectstr=L"datasource=localhost;port=3306;username=root;password=project";
+		String^ connectstr=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
 		MySqlConnection^ conDataBase=gcnew MySqlConnection(connectstr);
-		MySqlCommand^ cmdDataBase=gcnew MySqlCommand("SELECT * FROM users.loginids;",conDataBase);
+		MySqlCommand^ cmdDataBase=gcnew MySqlCommand("SELECT roll_number,name,username,department FROM course_management.student_list;",conDataBase);
 		//MySqlDataReader^ myReader;
 		try
 		{

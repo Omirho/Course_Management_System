@@ -15,9 +15,11 @@ namespace Course_management {
 	public ref class sendmessage : public System::Windows::Forms::Form
 	{
 	public:
+		//String^ userid;
 		sendmessage(void)
 		{
 			InitializeComponent();
+			//userid=u;
 			//
 			//TODO: Add the constructor code here
 			//

@@ -6,16 +6,16 @@
 #include <string.h>
 #include <string>
 #include "Form1.h"
-	namespace Course_management
-	{
+namespace Course_management
+{
 
 		Void addStudent::addStudent_Load(System::Object^ sender, System::EventArgs^ e)
 		{
 			String^ txtboxtxt;
 			//String* usrname[] = new String* [30];
-			String^ connectstr=L"datasource=localhost;port=3306;username=root;password=project";
+			String^ connectstr=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
 			MySqlConnection^ conDataBase=gcnew MySqlConnection(connectstr);
-			MySqlCommand^ cmdDataBase=gcnew MySqlCommand("SELECT * FROM users.signuprequests where usertype='student';",conDataBase);
+			MySqlCommand^ cmdDataBase=gcnew MySqlCommand("SELECT * FROM course_management.signuprequests where usertype='Student';",conDataBase);
 			MySqlDataReader^ myReader;
 			try
 			{
@@ -24,9 +24,9 @@
 				int count=0;
 				while(myReader->Read())
 				{   count = count+1;
-					name=myReader->GetString("name");
+					name=myReader->GetString("Name");
 					usrname[count]=myReader->GetString("username");
-					txtboxtxt="*"+name +" requested you to add him/her to student record under student previleges";
+					txtboxtxt="*"+name +" requested you to add him/her to student record under student privileges";
 
 					 radio1[count]->Name = System::Convert::ToString(count); 
 					 radio2[count]->Name = System::Convert::ToString(count);
@@ -82,62 +82,76 @@
 		}
 	Void addStudent::button1_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		MessageBox::Show("hello");
 		int i;
-		int action;
+		//int action;
+		String^ connectstr=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
+		MySqlConnection^ conDataBase=gcnew MySqlConnection(connectstr);
 		for( i =0 ;i<=count;i++)
 		{
 			if(radio1[i]->Checked == true)
-			{action=1;
-				break;}
-			else if(radio2[i]->Checked== true)
 			{
-				action=0;break;
-			}
-		}
-		name = label[i]->Text;
-		String^ uname=usrname[i];
+				String^ uname=usrname[i];
+				MySqlCommand^ cmdDataBase=gcnew MySqlCommand("select * from course_management.signuprequests where username='"+uname+"';",conDataBase);
+				//MySqlCommand^ cmdDataBase2=gcnew MySqlCommand("insert into users.studentrecord where usertype='student';",conDataBase);
+				MySqlDataReader^ myReader;
+				try
+					{
+							conDataBase->Open();
+							myReader=cmdDataBase->ExecuteReader();
+							while (myReader->Read())
+							{
+							String^	nme=myReader->GetString(1);
+							uname = myReader->GetString(2);
+							String^ pss=myReader->GetString(3);
+							String ^ rll = myReader->GetString(5);
+							String^ cmdText1 = "INSERT INTO course_management.student_list (`name`,`username`,`password`,`roll_number`) VALUES('"+nme+"','"+uname+"','"+pss+"','"+rll+"');";
+							MySqlCommand^ cmdDataBase1=gcnew MySqlCommand(cmdText1,conDataBase);
+							cmdDataBase1->Prepare();
+							cmdDataBase1->ExecuteNonQuery();
+						}
+						MySqlCommand^ cmdDataBase2=gcnew MySqlCommand("delete from course_management.signuprequests where username='"+uname+"';",conDataBase);
+						cmdDataBase2->Prepare();
+						cmdDataBase2->ExecuteNonQuery();
 	
+				}
+			catch(Exception^ ex)
+				{
+					MessageBox::Show(ex->ToString());
+				}
 
-	String^ connectstr=L"datasource=localhost;port=3306;username=root;password=project";
-	MySqlConnection^ conDataBase=gcnew MySqlConnection(connectstr);
-	MySqlCommand^ cmdDataBase=gcnew MySqlCommand("select * from users.signuprequests where username='"+uname+"' ",conDataBase);
-	//MySqlCommand^ cmdDataBase2=gcnew MySqlCommand("insert into users.studentrecord where usertype='student';",conDataBase);
-	MySqlDataReader^ myReader;
-	try
-		{
-			conDataBase->Open();
-			myReader=cmdDataBase->ExecuteReader();
-			while (myReader->Read())
+
+		}
+		else if(radio2[i]->Checked== true)
 			{
-			String^	nme=myReader->GetString("name");
-				uname = myReader->GetString("username");
-				String^ pss=myReader->GetString("password");
-				String^ secques= myReader->GetString("securityquestion");
-				String^ secans= myReader->GetString("securityans");
-				String ^ rll = myReader->GetString("RollNo.");
+				String^ uname=usrname[i];
+				MessageBox::Show(uname);
+				String^ connectstr=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
+				MySqlConnection^ conDataBase=gcnew MySqlConnection(connectstr);
+				MySqlCommand^ cmdDataBase=gcnew MySqlCommand("delete from course_management.signuprequests where username='"+uname+"';",conDataBase);
+				//MySqlCommand^ cmdDataBase2=gcnew MySqlCommand("insert into users.studentrecord where usertype='student';",conDataBase);
+				//MySqlDataReader^ myReader;
+				conDataBase->Open();
+				cmdDataBase->Prepare();
+				cmdDataBase->ExecuteNonQuery();
 			}
-
 		}
-	catch(Exception^ ex)
-		{
-			MessageBox::Show(ex->ToString());
-		}
-
-
-	String^ connectstr1=L"datasource=localhost;port=3306;username=root;password=project";
-	MySqlConnection^ conDataBase1=gcnew MySqlConnection(connectstr);
+		this->Close();
+	//	name = label[i]->Text;
+	//String^ connectstr1=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
+	//MySqlConnection^ conDataBase1=gcnew MySqlConnection(connectstr);
 	// MySqlCommand^ cmdDataBase=gcnew MySqlCommand("SELECT * FROM users.loginids;",conDataBase);
 	//MySqlDataReader^ myReader;
-	try
-	{
+	//try
+	//{
 		/*conDataBase1->Open();
 		String^ cmdText1 = "INSERT INTO users.loginids (`SNo.`,`Name`,`username`,`password`,`usertype`,`securityquestion`,`securityans`,`RollNo.`) VALUES('"+key+"','"+name+"','"+username+"','"+pass+"','"+usertype+"','"+securityques+"','"+ans+"','"+r+"');";
 		MySqlCommand^ cmdDataBase1=gcnew MySqlCommand(cmdText,conDataBase);
 		cmdDataBase1->Prepare();
 		cmdDataBase1->ExecuteNonQuery();*/
-	}
-	catch(Exception^ ex){
-		MessageBox::Show(ex->Message);
-	}
+	//}
+	//catch(Exception^ ex){
+	//	MessageBox::Show(ex->Message);
+	//}
 		}
 	}

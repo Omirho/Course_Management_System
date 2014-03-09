@@ -46,9 +46,9 @@ namespace Course_management
 		String^ finalpass= textBox5->Text;int f1=0,f2=0,f=0;int key =1;
 
 
-		String^ connectstr=L"datasource=localhost;port=3306;username=root;password=project";
+		String^ connectstr=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
 		MySqlConnection^ conDataBase=gcnew MySqlConnection(connectstr);
-	    MySqlCommand^ cmdDataBase=gcnew MySqlCommand("SELECT * FROM users.signuprequests;",conDataBase);
+	    MySqlCommand^ cmdDataBase=gcnew MySqlCommand("SELECT * FROM course_management.signuprequests;",conDataBase);
 		MySqlDataReader^ myReader;
 		try
 		{
@@ -83,12 +83,12 @@ namespace Course_management
 			label4->Show();
 			label4->Text="* marked fields are required";
 		}
-		else if(pass->Length < 8)
+		else if(pass->Length < 6)
 		{
 			f1=1;
 			label4->Show();
 			//label4->Text= name;
-			label4->Text="passwords should be atleast 8 characters long";
+			label4->Text="passwords should be atleast 6 characters long";
 		}
 		else if(String::Compare(pass,finalpass)!=0)
 		{f2=1;
@@ -104,14 +104,15 @@ namespace Course_management
 			//----------SNo.(primary key),from(name),username,usertype,password,status-----------//
 
 
-			String^ connectstr=L"datasource=localhost;port=3306;username=root;password=project";
+			String^ connectstr=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
 			MySqlConnection^ conDataBase=gcnew MySqlConnection(connectstr);
 			// MySqlCommand^ cmdDataBase=gcnew MySqlCommand("SELECT * FROM users.loginids;",conDataBase);
 			//MySqlDataReader^ myReader;
 			try
 			{
 				conDataBase->Open();
-				String^ cmdText = "INSERT INTO users.signuprequests (`SNo.`,`Name`,`username`,`password`,`usertype`,`securityquestion`,`securityans`,`RollNo.`) VALUES('"+key+"','"+name+"','"+username+"','"+pass+"','"+usertype+"','"+securityques+"','"+ans+"','"+r+"');";
+				//String^ cmdText = "INSERT INTO users.signuprequests (`SNo.`,`Name`,`username`,`password`,`usertype`,`securityquestion`,`securityans`,`RollNo.`) VALUES('"+key+"','"+name+"','"+username+"','"+pass+"','"+usertype+"','"+securityques+"','"+ans+"','"+r+"');";
+				String^ cmdText = "INSERT INTO users.signuprequests (`SNo.`,`Name`,`username`,`password`,`usertype`,`RollNo.`) VALUES('"+key+"','"+name+"','"+username+"','"+pass+"','"+usertype+"','"+r+"');";
 				MySqlCommand^ cmdDataBase=gcnew MySqlCommand(cmdText,conDataBase);
 				cmdDataBase->Prepare();
 				cmdDataBase->ExecuteNonQuery();

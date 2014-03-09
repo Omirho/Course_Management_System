@@ -123,13 +123,13 @@ namespace Course_management {
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->dataGridView4 = (gcnew System::Windows::Forms::DataGridView());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->dataGridView4 = (gcnew System::Windows::Forms::DataGridView());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->flowLayoutPanel1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->PersonalData->SuspendLayout();
@@ -276,9 +276,13 @@ namespace Course_management {
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->AllowUserToAddRows = false;
+			this->dataGridView1->AllowUserToDeleteRows = false;
+			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(366, 82);
 			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->Size = System::Drawing::Size(255, 114);
 			this->dataGridView1->TabIndex = 2;
 			// 
@@ -330,9 +334,13 @@ namespace Course_management {
 			// 
 			// dataGridView2
 			// 
+			this->dataGridView2->AllowUserToAddRows = false;
+			this->dataGridView2->AllowUserToDeleteRows = false;
+			this->dataGridView2->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView2->Location = System::Drawing::Point(204, 23);
 			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->ReadOnly = true;
 			this->dataGridView2->Size = System::Drawing::Size(565, 329);
 			this->dataGridView2->TabIndex = 1;
 			// 
@@ -394,9 +402,13 @@ namespace Course_management {
 			// 
 			// dataGridView3
 			// 
+			this->dataGridView3->AllowUserToAddRows = false;
+			this->dataGridView3->AllowUserToDeleteRows = false;
+			this->dataGridView3->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView3->Location = System::Drawing::Point(56, 59);
 			this->dataGridView3->Name = L"dataGridView3";
+			this->dataGridView3->ReadOnly = true;
 			this->dataGridView3->Size = System::Drawing::Size(741, 201);
 			this->dataGridView3->TabIndex = 1;
 			// 
@@ -410,15 +422,6 @@ namespace Course_management {
 			this->label8->Size = System::Drawing::Size(104, 24);
 			this->label8->TabIndex = 0;
 			this->label8->Text = L"Messages";
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(651, 0);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(52, 23);
-			this->button2->TabIndex = 1;
-			this->button2->Text = L"Logout";
-			this->button2->UseVisualStyleBackColor = true;
 			// 
 			// tabPage2
 			// 
@@ -435,24 +438,22 @@ namespace Course_management {
 			this->tabPage2->Text = L"Register for Course";
 			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
-			// label11
+			// button3
 			// 
-			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label11->Location = System::Drawing::Point(48, 21);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(152, 20);
-			this->label11->TabIndex = 0;
-			this->label11->Text = L"Courses Available";
+			this->button3->Location = System::Drawing::Point(184, 275);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(75, 23);
+			this->button3->TabIndex = 4;
+			this->button3->Text = L"Register";
+			this->button3->UseVisualStyleBackColor = true;
 			// 
-			// dataGridView4
+			// comboBox3
 			// 
-			this->dataGridView4->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView4->Location = System::Drawing::Point(52, 65);
-			this->dataGridView4->Name = L"dataGridView4";
-			this->dataGridView4->Size = System::Drawing::Size(691, 162);
-			this->dataGridView4->TabIndex = 1;
+			this->comboBox3->FormattingEnabled = true;
+			this->comboBox3->Location = System::Drawing::Point(56, 278);
+			this->comboBox3->Name = L"comboBox3";
+			this->comboBox3->Size = System::Drawing::Size(121, 21);
+			this->comboBox3->TabIndex = 3;
 			// 
 			// label12
 			// 
@@ -465,22 +466,37 @@ namespace Course_management {
 			this->label12->TabIndex = 2;
 			this->label12->Text = L"Select Course";
 			// 
-			// comboBox3
+			// dataGridView4
 			// 
-			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Location = System::Drawing::Point(56, 278);
-			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(121, 21);
-			this->comboBox3->TabIndex = 3;
+			this->dataGridView4->AllowUserToAddRows = false;
+			this->dataGridView4->AllowUserToDeleteRows = false;
+			this->dataGridView4->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGridView4->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView4->Location = System::Drawing::Point(52, 65);
+			this->dataGridView4->Name = L"dataGridView4";
+			this->dataGridView4->ReadOnly = true;
+			this->dataGridView4->Size = System::Drawing::Size(691, 162);
+			this->dataGridView4->TabIndex = 1;
 			// 
-			// button3
+			// label11
 			// 
-			this->button3->Location = System::Drawing::Point(184, 275);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 23);
-			this->button3->TabIndex = 4;
-			this->button3->Text = L"Register";
-			this->button3->UseVisualStyleBackColor = true;
+			this->label11->AutoSize = true;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label11->Location = System::Drawing::Point(48, 21);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(152, 20);
+			this->label11->TabIndex = 0;
+			this->label11->Text = L"Courses Available";
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(651, 0);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(52, 23);
+			this->button2->TabIndex = 1;
+			this->button2->Text = L"Logout";
+			this->button2->UseVisualStyleBackColor = true;
 			// 
 			// studentform
 			// 
@@ -491,6 +507,7 @@ namespace Course_management {
 			this->Controls->Add(this->flowLayoutPanel1);
 			this->Name = L"studentform";
 			this->Text = L"studentform";
+			this->Load += gcnew System::EventHandler(this, &studentform::studentform_Load);
 			this->flowLayoutPanel1->ResumeLayout(false);
 			this->tabControl1->ResumeLayout(false);
 			this->PersonalData->ResumeLayout(false);
@@ -516,5 +533,45 @@ namespace Course_management {
 private: System::Void label6_Click(System::Object^  sender, System::EventArgs^  e) {
 		 //change the name of label6(username) dynamically depending upon the username and password from the data base
 		 }
-	};
+	private: System::Void studentform_Load(System::Object^  sender, System::EventArgs^  e) {
+				 label4->Text=name;
+				 label6->Text=userid;
+				 String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
+			 MySqlConnection^ con=gcnew MySqlConnection(connectstr);
+			 MySqlDataReader^ reader;
+			 auto da1=gcnew MySqlDataAdapter("Select date,text from course_management.calendar where user=\'"+userid+"\';",con);
+			 auto ds1=gcnew DataSet;
+			 da1->Fill(ds1,"std");
+			 dataGridView1->DataSource=ds1;
+			 dataGridView1->DataMember="std";
+			 dataGridView1->Refresh();
+			 auto da2=gcnew MySqlDataAdapter("Select course_management.courses_list.name,course_management.courses_list.course_no,course_management.courses_list.year from course_management.courses_list,course_management.registrations where course_management.registrations.userid='"+userid+"' and course_management.courses_list.columnname=course_management.registrations.coursecolumnname;",con);
+			 auto ds2=gcnew DataSet;
+			 da2->Fill(ds2,"std");
+			 dataGridView2->DataSource=ds2;
+			 dataGridView2->DataMember="std";
+			 dataGridView2->Refresh();
+			 auto da3=gcnew MySqlDataAdapter("Select `from`,`to`,time,description from course_management.messages where `to`='all' or `to`='"+userid+"';",con);
+			 auto ds3=gcnew DataSet;
+			 da3->Fill(ds3,"std");
+			 dataGridView3->DataSource=ds3;
+			 dataGridView3->DataMember="std";
+			 dataGridView3->Refresh();
+			 auto da4=gcnew MySqlDataAdapter("Select `name`,`department`,course_no,year from course_management.courses_list;",con);
+			 auto ds4=gcnew DataSet;
+			 da4->Fill(ds4,"std");
+			 dataGridView4->DataSource=ds4;
+			 dataGridView4->DataMember="std";
+			 dataGridView4->Refresh();
+			 MySqlCommand^ cmd = gcnew MySqlCommand("Select course_no,year from course_management.courses_list;",con);
+			 con->Open();
+			 reader=cmd->ExecuteReader();
+			 while(reader->Read())
+			 {
+				 comboBox3->Items->Add((reader->GetString(0))+","+(reader->GetString(1)));
+				 //comboBox1->Items->Add(reader->GetString(2));
+			 }
+			 con->Close();
+			 }
+};
 }

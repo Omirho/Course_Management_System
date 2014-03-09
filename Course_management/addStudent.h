@@ -49,6 +49,7 @@ namespace Course_management {
 			radio2 = gcnew array<RadioButton^ >(30);
 			txt = gcnew array<TextBox^ >(30);
 			label = gcnew array<Label^ >(30);
+			usrname = gcnew array<String ^>(30);
 			for(int i =0;i<25;i++)
 			{
 				//radio[i] = gcnew RadioButton;

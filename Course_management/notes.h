@@ -16,9 +16,11 @@ namespace Course_management {
 	public ref class notes : public System::Windows::Forms::Form
 	{
 	public:
-		notes(void)
+		String^ cn;
+		notes(String^ c)
 		{
 			InitializeComponent();
+			cn=c;
 			//
 			//TODO: Add the constructor code here
 			//

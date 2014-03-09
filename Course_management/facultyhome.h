@@ -21,12 +21,6 @@ namespace Course_management {
 	{
 	public:
 		String^ name;
-
-	public: 
-
-
-
-
 	public: 
 		String^ userid;
 		facultyhome(String^ n,String^ u)
@@ -641,6 +635,7 @@ namespace Course_management {
 			// 
 			this->dataGridView3->AllowUserToAddRows = false;
 			this->dataGridView3->AllowUserToDeleteRows = false;
+			this->dataGridView3->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView3->Location = System::Drawing::Point(25, 38);
 			this->dataGridView3->Name = L"dataGridView3";
@@ -782,7 +777,14 @@ private: System::Void button3_Click(System::Object^  sender, System::EventArgs^ 
 		 }
 private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) 
 		 {
-			 notes^ obj1= gcnew notes;
+			 String^ delimStr = ",";
+			 String^ k =  comboBox2->Text;
+			 array<String^>^ words;
+			 array<Char>^ delimiter = delimStr->ToCharArray();
+			 words = k->Split(delimiter);
+				//MessageBox::Show(words[0]);
+				//MessageBox::Show(words[1]);
+			 notes^ obj1= gcnew notes(words[0]+"+"+words[1]);
 			 obj1->Show(this);
 		 }
 private: System::Void button9_Click(System::Object^  sender, System::EventArgs^  e) 
@@ -821,23 +823,23 @@ private: System::Void facultyhome_Load(System::Object^  sender, System::EventArg
 			 while(reader->Read())
 			 {
 				 comboBox1->Items->Add((reader->GetString(1))+","+(reader->GetString(2)));
-				 //comboBox1->Items->Add(reader->GetString(2));
+				 comboBox2->Items->Add((reader->GetString(1))+","+(reader->GetString(2)));
 			 }
 			 con->Close();
 			 //comboBox1->DataMember="std";
 			 //comboBox1->Refresh();
 			//to be imported from database
-				 String^ name= "Movies";
-			 String^ path = "c:\\";
-			 array<String^>^ dir = Directory::GetDirectories(path );
-			 for (int i=0; i<dir->Length; i++)
-				//Console::WriteLine(dir[i]);
-			{
-
-//				listBox1->Items->Add( String::Format( dir[i], i ) );
-				//comboBox1->Items->Add( dir[i] );
-				comboBox2->Items->Add( dir[i] );
-			}	
+//				 String^ name= "Movies";
+//			 String^ path = "c:\\";
+//			 array<String^>^ dir = Directory::GetDirectories(path );
+//			 for (int i=0; i<dir->Length; i++)
+//				//Console::WriteLine(dir[i]);
+//			{
+//
+////				listBox1->Items->Add( String::Format( dir[i], i ) );
+//				//comboBox1->Items->Add( dir[i] );
+//				comboBox2->Items->Add( dir[i] );
+//			}	
 		 
 		 
 		 

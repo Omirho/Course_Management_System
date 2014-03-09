@@ -29,9 +29,9 @@ namespace Course_management
 		int key =1;
 
 
-		String^ connectstr=L"datasource=localhost;port=3306;username=root;password=project";
+		String^ connectstr=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
 		MySqlConnection^ conDataBase=gcnew MySqlConnection(connectstr);
-		MySqlCommand^ cmdDataBase=gcnew MySqlCommand("SELECT * FROM users.signuprequests;",conDataBase);
+		MySqlCommand^ cmdDataBase=gcnew MySqlCommand("SELECT * FROM course_management.signuprequests;",conDataBase);
 		MySqlDataReader^ myReader;
 		try
 		{
@@ -76,15 +76,15 @@ namespace Course_management
 			//---------- the table holds following fields----------//
 			//----------SNo.(primary key),from(name),username,usertype,password,status-----------//
 
-
-			String^ connectstr=L"datasource=localhost;port=3306;username=root;password=project";
+			DateTime now = DateTime::Now;
+			String^ connectstr=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
 			MySqlConnection^ conDataBase=gcnew MySqlConnection(connectstr);
 			// MySqlCommand^ cmdDataBase=gcnew MySqlCommand("SELECT * FROM users.loginids;",conDataBase);
 			//MySqlDataReader^ myReader;
 			try
 			{
 				conDataBase->Open();
-				String^ cmdText = "INSERT INTO users.messagesadmin (`SNo`,`from`,`to`,`subject`,`message`) VALUES('"+key+"','admin','"+to+"','"+sub+"','"+msg+"');";
+				String^ cmdText = "INSERT INTO course_management.messages (`from`,`to`,`time`,`description`) VALUES('admin','"+to+"','"+now.ToString("yyyy-MM-dd HH:mm:ss")+"','"+msg+"');";
 				MySqlCommand^ cmdDataBase=gcnew MySqlCommand(cmdText,conDataBase);
 				cmdDataBase->Prepare();
 				cmdDataBase->ExecuteNonQuery();
