@@ -117,6 +117,7 @@
     <ClCompile Include="AppointmentAdder.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Course_management.cpp" />
+    <ClCompile Include="deleteentry.cpp" />
     <ClCompile Include="deletethisform.cpp" />
     <ClCompile Include="facultyhome.cpp" />
     <ClCompile Include="Form2.cpp" />
@@ -150,6 +151,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="AppointmentAdder.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="deleteentry.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="deletethisform.h">
@@ -209,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppointmentAdder.resx">
       <DependentUpon>AppointmentAdder.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteentry.resx">
+      <DependentUpon>deleteentry.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="facultyhome.resx">
       <DependentUpon>facultyhome.h</DependentUpon>

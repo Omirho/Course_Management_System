@@ -23,6 +23,8 @@ namespace Course_management {
 			//
 		}*/
 		String^ userid;
+	private: System::Windows::Forms::LinkLabel^  linkLabel2;
+	public: 
 		String^ name;
 		studentform(String^ n,String^ u)
 		{
@@ -130,6 +132,7 @@ namespace Course_management {
 			this->dataGridView4 = (gcnew System::Windows::Forms::DataGridView());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->linkLabel2 = (gcnew System::Windows::Forms::LinkLabel());
 			this->flowLayoutPanel1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->PersonalData->SuspendLayout();
@@ -258,6 +261,7 @@ namespace Course_management {
 			this->Courses->BackColor = System::Drawing::Color::LightYellow;
 			this->Courses->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"Courses.BackgroundImage")));
 			this->Courses->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Courses->Controls->Add(this->linkLabel2);
 			this->Courses->Controls->Add(this->linkLabel1);
 			this->Courses->Controls->Add(this->dataGridView1);
 			this->Courses->Controls->Add(this->label7);
@@ -522,6 +526,16 @@ namespace Course_management {
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Logout";
 			this->button2->UseVisualStyleBackColor = true;
+			// 
+			// linkLabel2
+			// 
+			this->linkLabel2->AutoSize = true;
+			this->linkLabel2->Location = System::Drawing::Point(116, 183);
+			this->linkLabel2->Name = L"linkLabel2";
+			this->linkLabel2->Size = System::Drawing::Size(56, 18);
+			this->linkLabel2->TabIndex = 4;
+			this->linkLabel2->TabStop = true;
+			this->linkLabel2->Text = L"Delete";
 			// 
 			// studentform
 			// 
