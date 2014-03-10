@@ -266,10 +266,10 @@ namespace Course_management {
 			 }
 	
 	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e)
-	{
+	{this->Hide();
 		signupform^ obj=gcnew signupform;
-		obj->Show(this);
-		this->Hide();
+		obj->ShowDialog(this);
+		this->Show();
 	}
 
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e)
@@ -301,9 +301,10 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 					 if(count==1)
 					{
 						//MessageBox::Show(reader->GetString(0));
+							this->Hide();
 						adminmainform^ obj1= gcnew adminmainform;
-						obj1->Show(this);
-						this->Hide();
+						obj1->ShowDialog(this);
+						this->Show();
 					 }
 					 else
 						 MessageBox::Show("Invalid Username or Password");
@@ -333,9 +334,10 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 					 if(count==1)
 					{
 						String^ n=reader->GetString(0);
+							this->Hide();
 						facultyhome^ obj1= gcnew facultyhome(n,userid);
-						obj1->Show(this);
-						this->Hide();
+						obj1->ShowDialog(this);
+						this->Show();
 					 }
 					 else
 						 MessageBox::Show("Invalid Username or Password");
@@ -369,9 +371,10 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 						obj1->Show(this);
 						this->Hide();*/
 						String^ n=reader->GetString(0);
+							this->Hide();
 						studentform^ obj1= gcnew studentform(n,userid);
-						obj1->Show(this);
-						this->Hide();
+						obj1->ShowDialog(this);
+						this->Show();
 						//MessageBox::Show("Correct");
 					 }
 					 else

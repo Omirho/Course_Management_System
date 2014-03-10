@@ -118,8 +118,10 @@
     <ClCompile Include="AppointmentAdder.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Course_management.cpp" />
+    <ClCompile Include="deleteentry.cpp" />
     <ClCompile Include="deletethisform.cpp" />
     <ClCompile Include="facultyhome.cpp" />
+    <ClCompile Include="facultyrecords.cpp" />
     <ClCompile Include="Form2.cpp" />
     <ClCompile Include="notes.cpp" />
     <ClCompile Include="removeappointment.cpp" />
@@ -153,7 +155,13 @@
     <ClInclude Include="AppointmentAdder.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="deleteentry.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="facultyhome.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="facultyrecords.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Form1.h">
@@ -208,8 +216,14 @@
     <EmbeddedResource Include="AppointmentAdder.resx">
       <DependentUpon>AppointmentAdder.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="deleteentry.resx">
+      <DependentUpon>deleteentry.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="facultyhome.resx">
       <DependentUpon>facultyhome.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="facultyrecords.resx">
+      <DependentUpon>facultyrecords.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resX">
       <DependentUpon>Form1.h</DependentUpon>

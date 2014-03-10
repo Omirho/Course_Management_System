@@ -1,5 +1,6 @@
 #pragma once
 #include "addentry.h"
+#include "deleteentry.h"
 namespace Course_management {
 
 	using namespace System;
@@ -23,6 +24,11 @@ namespace Course_management {
 			//
 		}*/
 		String^ userid;
+	private: System::Windows::Forms::LinkLabel^  linkLabel2;
+	public: 
+		System::Windows::Forms::Button^  button4;
+	private: System::Windows::Forms::ListBox^  listBox1;
+	public: 
 		String^ name;
 		studentform(String^ n,String^ u)
 		{
@@ -65,7 +71,7 @@ namespace Course_management {
 	private: System::Windows::Forms::Label^  label7;
 	private: System::Windows::Forms::MonthCalendar^  monthCalendar1;
 
-	private: System::Windows::Forms::DataGridView^  dataGridView2;
+
 	private: System::Windows::Forms::ComboBox^  comboBox1;
 	private: System::Windows::Forms::TabPage^  tabPage1;
 	private: System::Windows::Forms::Button^  button1;
@@ -108,14 +114,15 @@ namespace Course_management {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->Courses = (gcnew System::Windows::Forms::TabPage());
+			this->linkLabel2 = (gcnew System::Windows::Forms::LinkLabel());
 			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->monthCalendar1 = (gcnew System::Windows::Forms::MonthCalendar());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
-			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -130,13 +137,13 @@ namespace Course_management {
 			this->dataGridView4 = (gcnew System::Windows::Forms::DataGridView());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->flowLayoutPanel1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->PersonalData->SuspendLayout();
 			this->Courses->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView1))->BeginInit();
 			this->tabPage3->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView2))->BeginInit();
 			this->tabPage1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView3))->BeginInit();
 			this->tabPage2->SuspendLayout();
@@ -258,6 +265,7 @@ namespace Course_management {
 			this->Courses->BackColor = System::Drawing::Color::LightYellow;
 			this->Courses->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"Courses.BackgroundImage")));
 			this->Courses->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Courses->Controls->Add(this->linkLabel2);
 			this->Courses->Controls->Add(this->linkLabel1);
 			this->Courses->Controls->Add(this->dataGridView1);
 			this->Courses->Controls->Add(this->label7);
@@ -268,6 +276,17 @@ namespace Course_management {
 			this->Courses->Size = System::Drawing::Size(843, 379);
 			this->Courses->TabIndex = 1;
 			this->Courses->Text = L"Planner";
+			// 
+			// linkLabel2
+			// 
+			this->linkLabel2->AutoSize = true;
+			this->linkLabel2->Location = System::Drawing::Point(116, 183);
+			this->linkLabel2->Name = L"linkLabel2";
+			this->linkLabel2->Size = System::Drawing::Size(56, 18);
+			this->linkLabel2->TabIndex = 4;
+			this->linkLabel2->TabStop = true;
+			this->linkLabel2->Text = L"Delete";
+			this->linkLabel2->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &studentform::linkLabel2_LinkClicked);
 			// 
 			// linkLabel1
 			// 
@@ -315,15 +334,26 @@ namespace Course_management {
 			this->tabPage3->BackColor = System::Drawing::Color::LightYellow;
 			this->tabPage3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"tabPage3.BackgroundImage")));
 			this->tabPage3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->tabPage3->Controls->Add(this->listBox1);
+			this->tabPage3->Controls->Add(this->button4);
 			this->tabPage3->Controls->Add(this->label10);
 			this->tabPage3->Controls->Add(this->comboBox1);
-			this->tabPage3->Controls->Add(this->dataGridView2);
 			this->tabPage3->Location = System::Drawing::Point(4, 27);
 			this->tabPage3->Name = L"tabPage3";
 			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage3->Size = System::Drawing::Size(843, 379);
 			this->tabPage3->TabIndex = 2;
 			this->tabPage3->Text = L"Courses";
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(294, 8);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(135, 23);
+			this->button4->TabIndex = 4;
+			this->button4->Text = L"Load Material";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &studentform::button4_Click);
 			// 
 			// label10
 			// 
@@ -340,22 +370,10 @@ namespace Course_management {
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(139, 7);
+			this->comboBox1->Location = System::Drawing::Point(154, 8);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(121, 26);
 			this->comboBox1->TabIndex = 2;
-			// 
-			// dataGridView2
-			// 
-			this->dataGridView2->AllowUserToAddRows = false;
-			this->dataGridView2->AllowUserToDeleteRows = false;
-			this->dataGridView2->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
-			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->Location = System::Drawing::Point(6, 40);
-			this->dataGridView2->Name = L"dataGridView2";
-			this->dataGridView2->ReadOnly = true;
-			this->dataGridView2->Size = System::Drawing::Size(508, 315);
-			this->dataGridView2->TabIndex = 1;
 			// 
 			// tabPage1
 			// 
@@ -523,6 +541,15 @@ namespace Course_management {
 			this->button2->Text = L"Logout";
 			this->button2->UseVisualStyleBackColor = true;
 			// 
+			// listBox1
+			// 
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->ItemHeight = 18;
+			this->listBox1->Location = System::Drawing::Point(36, 80);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(440, 274);
+			this->listBox1->TabIndex = 5;
+			// 
 			// studentform
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -543,7 +570,6 @@ namespace Course_management {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView1))->EndInit();
 			this->tabPage3->ResumeLayout(false);
 			this->tabPage3->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView2))->EndInit();
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView3))->EndInit();
@@ -621,6 +647,25 @@ private: System::Void label6_Click(System::Object^  sender, System::EventArgs^  
 private: System::Void linkLabel1_LinkClicked(System::Object^  sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^  e) {
 			 addentry^ obj = gcnew addentry(userid);
 			 obj->Show();
+		 }
+private: System::Void linkLabel2_LinkClicked(System::Object^  sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^  e) {
+			  deleteentry^ obj = gcnew deleteentry(userid);
+			 obj->Show();
+		 }
+private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) 
+		 {
+			 String^ delimStr = ",";
+			 String^ k =  comboBox1->Text;
+			 array<String^>^ words;
+			 array<Char>^ delimiter = delimStr->ToCharArray();
+			 words = k->Split(delimiter);
+			 String^ path= "c://Course_Management_System" +"//"+ words[0] + "+" + words[1]  ;
+			 array<String^>^ dir = Directory::GetFiles(path );
+			 for (int i=0; i<dir->Length; i++)
+			{
+				listBox1->Items->Add( String::Format( dir[i], i ) );
+				
+			}	
 		 }
 };
 }

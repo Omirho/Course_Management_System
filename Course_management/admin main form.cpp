@@ -5,7 +5,7 @@
 #include "deletethisform.h"
 #include "adminmainform.h"
 #include "signupform.h"
-//#include "studentrecords.h"
+#include "facultyrecords.h"
 #include "studentrecord.h"
 #include "addStudent.h"
 #include "sendmessage.h"
@@ -16,42 +16,48 @@
 namespace Course_management
 {
 
+Void adminmainform::button2_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	this->Hide();
+	facultyrecords^ obj = gcnew facultyrecords;
+		obj->ShowDialog(this);
+		this->Show();
+
+
+}
 	Void adminmainform::button1_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->Hide();
 		addStudent^ obj = gcnew addStudent;
-		obj->Show(this);
-		//this->Hide();
+		obj->ShowDialog(this);
+		this->Show();
 	}
 
 
 	Void adminmainform::button6_Click(System::Object^ sender, System::EventArgs^ e)
 	{
+		this->Hide();
 		studentrecord^ obj= gcnew studentrecord;
-		obj->Show(this);
-		//this->Hide();
+		obj->ShowDialog(this);
+		this->Show();
 
 	}
 
 
 	Void adminmainform::button4_Click(System::Object^  sender, System::EventArgs^  e) 
 	{
-
+		this->Hide();
 		sendmessage^ obj=gcnew sendmessage;
-		obj->Show(this);
-		//this->Hide();
+		obj->ShowDialog(this);
+		this->Show();
 	}
 
 	Void adminmainform::button3_Click(System::Object^  sender, System::EventArgs^  e) 
 	{
+		this->Hide();
 		addfaculty^ obj=gcnew addfaculty;
-		obj->Show(this);
-		//this->Hide();
+		obj->ShowDialog(this);
+		this->Show();
 	}
-	Void adminmainform::button5_Click(System::Object^ sender, System::EventArgs^ e)
-	{
-
-		deletethisform^ obj = gcnew deletethisform;
-		obj->Show(this);
-		//this->Hide();
-	}
+	
 }

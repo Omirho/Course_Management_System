@@ -129,6 +129,12 @@
     <ClCompile Include="addentry.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="deleteentry.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="facultyrecords.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -183,6 +189,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="addentry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="deleteentry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="facultyrecords.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,5 +1,5 @@
 #pragma once
-
+//#include "Form1.h"
 namespace Course_management {
 
 	using namespace System;
@@ -44,6 +44,8 @@ namespace Course_management {
 	private: System::Windows::Forms::Button^  button6;
 
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
+	private: System::Windows::Forms::Button^  button2;
+	private: System::Windows::Forms::Button^  button5;
 
 	private:
 		/// <summary>
@@ -64,6 +66,8 @@ namespace Course_management {
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -129,12 +133,41 @@ namespace Course_management {
 			this->pictureBox1->TabIndex = 8;
 			this->pictureBox1->TabStop = false;
 			// 
+			// button2
+			// 
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->button2->ForeColor = System::Drawing::Color::Olive;
+			this->button2->Location = System::Drawing::Point(11, 345);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(272, 23);
+			this->button2->TabIndex = 9;
+			this->button2->Text = L"FACULTY RECORDS";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &adminmainform::button2_Click);
+			// 
+			// button5
+			// 
+			this->button5->BackColor = System::Drawing::Color::Yellow;
+			this->button5->Font = (gcnew System::Drawing::Font(L"Mistral", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->button5->ForeColor = System::Drawing::Color::Olive;
+			this->button5->Location = System::Drawing::Point(655, 12);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(86, 35);
+			this->button5->TabIndex = 10;
+			this->button5->Text = L"Log Out";
+			this->button5->UseVisualStyleBackColor = false;
+			this->button5->Click += gcnew System::EventHandler(this, &adminmainform::button5_Click_1);
+			// 
 			// adminmainform
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(789, 488);
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->button6);
 			this->Controls->Add(this->button4);
@@ -165,9 +198,16 @@ private: System::Void button3_Click(System::Object^  sender, System::EventArgs^ 
 		 
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) ;
 		 
-private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) ;
+//private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) ;
 		 
 private: System::Void adminmainform_Load(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) ;
+		 
+private: System::Void button5_Click_1(System::Object^  sender, System::EventArgs^  e) {
+			 this->Close();
+			 //Form1^ obj= gcnew Form1;
+			// obj->Show(this);
 		 }
 };
 }
