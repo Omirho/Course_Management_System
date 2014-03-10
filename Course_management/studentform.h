@@ -1,6 +1,5 @@
 #pragma once
 #include "addentry.h"
-#include "deleteentry.h"
 namespace Course_management {
 
 	using namespace System;
