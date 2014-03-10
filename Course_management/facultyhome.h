@@ -64,7 +64,7 @@ namespace Course_management {
 	private: System::Windows::Forms::Label^  label6;
 	private: System::Windows::Forms::Label^  label7;
 	private: System::Windows::Forms::Label^  label8;
-	private: System::Windows::Forms::MonthCalendar^  monthCalendar1;
+
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::DataGridView^  dataGridView1;
@@ -117,10 +117,10 @@ namespace Course_management {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(facultyhome::typeid));
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->monthCalendar1 = (gcnew System::Windows::Forms::MonthCalendar());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label7 = (gcnew System::Windows::Forms::Label());
@@ -181,16 +181,19 @@ namespace Course_management {
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Controls->Add(this->tabPage3);
-			this->tabControl1->Location = System::Drawing::Point(1, 2);
+			this->tabControl1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->tabControl1->Location = System::Drawing::Point(1, -3);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(773, 454);
+			this->tabControl1->Size = System::Drawing::Size(773, 459);
 			this->tabControl1->TabIndex = 0;
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->BackColor = System::Drawing::Color::Transparent;
+			this->tabPage1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"tabPage1.BackgroundImage")));
 			this->tabPage1->Controls->Add(this->dataGridView1);
-			this->tabPage1->Controls->Add(this->monthCalendar1);
 			this->tabPage1->Controls->Add(this->button2);
 			this->tabPage1->Controls->Add(this->button1);
 			this->tabPage1->Controls->Add(this->label7);
@@ -199,19 +202,20 @@ namespace Course_management {
 			this->tabPage1->Controls->Add(this->label2);
 			this->tabPage1->Controls->Add(this->label1);
 			this->tabPage1->Controls->Add(this->shapeContainer1);
-			this->tabPage1->Location = System::Drawing::Point(4, 25);
+			this->tabPage1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->tabPage1->Location = System::Drawing::Point(4, 30);
 			this->tabPage1->Name = L"tabPage1";
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage1->Size = System::Drawing::Size(765, 425);
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Personal";
-			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->AllowUserToAddRows = false;
 			this->dataGridView1->AllowUserToDeleteRows = false;
-			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::DisplayedCells;
+			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(7, 64);
 			this->dataGridView1->Name = L"dataGridView1";
@@ -219,17 +223,13 @@ namespace Course_management {
 			this->dataGridView1->Size = System::Drawing::Size(746, 169);
 			this->dataGridView1->TabIndex = 11;
 			// 
-			// monthCalendar1
-			// 
-			this->monthCalendar1->Location = System::Drawing::Point(526, 254);
-			this->monthCalendar1->Name = L"monthCalendar1";
-			this->monthCalendar1->TabIndex = 10;
-			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(164, 331);
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->button2->Location = System::Drawing::Point(41, 365);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(117, 27);
+			this->button2->Size = System::Drawing::Size(204, 27);
 			this->button2->TabIndex = 9;
 			this->button2->Text = L"Remove Apointment";
 			this->button2->UseVisualStyleBackColor = true;
@@ -237,9 +237,11 @@ namespace Course_management {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(41, 331);
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->button1->Location = System::Drawing::Point(41, 315);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(117, 27);
+			this->button1->Size = System::Drawing::Size(204, 27);
 			this->button1->TabIndex = 8;
 			this->button1->Text = L"Add/Edit Apointment";
 			this->button1->UseVisualStyleBackColor = true;
@@ -248,40 +250,51 @@ namespace Course_management {
 			// label7
 			// 
 			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label7->ForeColor = System::Drawing::Color::LightYellow;
 			this->label7->Location = System::Drawing::Point(649, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(35, 13);
+			this->label7->Size = System::Drawing::Size(52, 18);
 			this->label7->TabIndex = 7;
 			this->label7->Text = L"label7";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(29, 286);
+			this->label4->BackColor = System::Drawing::Color::Transparent;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::Color::LightYellow;
+			this->label4->Location = System::Drawing::Point(19, 270);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(161, 16);
+			this->label4->Size = System::Drawing::Size(198, 18);
 			this->label4->TabIndex = 6;
 			this->label4->Text = L"Schedule an Appointment";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::Color::LightYellow;
 			this->label3->Location = System::Drawing::Point(19, 45);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(151, 16);
+			this->label3->Size = System::Drawing::Size(194, 18);
 			this->label3->TabIndex = 3;
 			this->label3->Text = L"List of upcoming Events:";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(321, 20);
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::Color::Ivory;
+			this->label2->Location = System::Drawing::Point(325, 17);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(81, 13);
+			this->label2->Size = System::Drawing::Size(126, 18);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Name of faculty";
 			this->label2->Click += gcnew System::EventHandler(this, &facultyhome::label2_Click);
@@ -289,11 +302,13 @@ namespace Course_management {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::LightYellow;
 			this->label1->Location = System::Drawing::Point(256, 17);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(66, 16);
+			this->label1->Size = System::Drawing::Size(79, 18);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Welcome";
 			this->label1->Click += gcnew System::EventHandler(this, &facultyhome::label1_Click);
@@ -319,6 +334,8 @@ namespace Course_management {
 			// 
 			// tabPage2
 			// 
+			this->tabPage2->BackColor = System::Drawing::Color::Transparent;
+			this->tabPage2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"tabPage2.BackgroundImage")));
 			this->tabPage2->Controls->Add(this->button6);
 			this->tabPage2->Controls->Add(this->label11);
 			this->tabPage2->Controls->Add(this->comboBox2);
@@ -333,19 +350,22 @@ namespace Course_management {
 			this->tabPage2->Controls->Add(this->dataGridView2);
 			this->tabPage2->Controls->Add(this->label5);
 			this->tabPage2->Controls->Add(this->shapeContainer2);
-			this->tabPage2->Location = System::Drawing::Point(4, 25);
+			this->tabPage2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->tabPage2->ForeColor = System::Drawing::Color::LightYellow;
+			this->tabPage2->Location = System::Drawing::Point(4, 30);
 			this->tabPage2->Name = L"tabPage2";
 			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage2->Size = System::Drawing::Size(765, 425);
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"Courses";
-			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(221, 325);
+			this->button6->ForeColor = System::Drawing::Color::Olive;
+			this->button6->Location = System::Drawing::Point(267, 326);
 			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(40, 21);
+			this->button6->Size = System::Drawing::Size(40, 27);
 			this->button6->TabIndex = 14;
 			this->button6->Text = L"Go";
 			this->button6->UseVisualStyleBackColor = true;
@@ -354,24 +374,27 @@ namespace Course_management {
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->label11->BackColor = System::Drawing::Color::Transparent;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label11->ForeColor = System::Drawing::Color::LightYellow;
 			this->label11->Location = System::Drawing::Point(24, 326);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(92, 16);
+			this->label11->Size = System::Drawing::Size(115, 18);
 			this->label11->TabIndex = 13;
 			this->label11->Text = L"Select Course";
 			// 
 			// comboBox2
 			// 
 			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(122, 325);
+			this->comboBox2->Location = System::Drawing::Point(168, 326);
 			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(93, 21);
+			this->comboBox2->Size = System::Drawing::Size(93, 26);
 			this->comboBox2->TabIndex = 12;
 			// 
 			// button5
 			// 
+			this->button5->ForeColor = System::Drawing::Color::Olive;
 			this->button5->Location = System::Drawing::Point(638, 36);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(97, 26);
@@ -383,16 +406,19 @@ namespace Course_management {
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->label12->BackColor = System::Drawing::Color::Transparent;
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label12->ForeColor = System::Drawing::Color::LightYellow;
 			this->label12->Location = System::Drawing::Point(24, 292);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(132, 16);
+			this->label12->Size = System::Drawing::Size(168, 18);
 			this->label12->TabIndex = 10;
 			this->label12->Text = L"Post Course Material";
 			// 
 			// button4
 			// 
+			this->button4->ForeColor = System::Drawing::Color::Olive;
 			this->button4->Location = System::Drawing::Point(535, 36);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(97, 26);
@@ -403,9 +429,10 @@ namespace Course_management {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(221, 210);
+			this->button3->ForeColor = System::Drawing::Color::Olive;
+			this->button3->Location = System::Drawing::Point(267, 211);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(40, 21);
+			this->button3->Size = System::Drawing::Size(40, 27);
 			this->button3->TabIndex = 7;
 			this->button3->Text = L"Go";
 			this->button3->UseVisualStyleBackColor = true;
@@ -414,40 +441,46 @@ namespace Course_management {
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->label10->BackColor = System::Drawing::Color::Transparent;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label10->ForeColor = System::Drawing::Color::LightYellow;
 			this->label10->Location = System::Drawing::Point(23, 178);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(130, 16);
+			this->label10->Size = System::Drawing::Size(166, 18);
 			this->label10->TabIndex = 6;
 			this->label10->Text = L"Students in a Course";
 			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->label9->BackColor = System::Drawing::Color::Transparent;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label9->ForeColor = System::Drawing::Color::LightYellow;
 			this->label9->Location = System::Drawing::Point(24, 211);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(92, 16);
+			this->label9->Size = System::Drawing::Size(115, 18);
 			this->label9->TabIndex = 4;
 			this->label9->Text = L"Select Course";
 			// 
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(122, 210);
+			this->comboBox1->Location = System::Drawing::Point(168, 211);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(93, 21);
+			this->comboBox1->Size = System::Drawing::Size(93, 26);
 			this->comboBox1->TabIndex = 3;
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &facultyhome::comboBox1_SelectedIndexChanged);
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label6->Location = System::Drawing::Point(651, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(35, 13);
+			this->label6->Size = System::Drawing::Size(52, 18);
 			this->label6->TabIndex = 2;
 			this->label6->Text = L"label6";
 			// 
@@ -466,11 +499,13 @@ namespace Course_management {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->label5->BackColor = System::Drawing::Color::Transparent;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::Color::LightYellow;
 			this->label5->Location = System::Drawing::Point(23, 23);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(93, 16);
+			this->label5->Size = System::Drawing::Size(121, 18);
 			this->label5->TabIndex = 0;
 			this->label5->Text = L"List of courses";
 			// 
@@ -505,6 +540,8 @@ namespace Course_management {
 			// 
 			// tabPage3
 			// 
+			this->tabPage3->BackColor = System::Drawing::Color::Transparent;
+			this->tabPage3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"tabPage3.BackgroundImage")));
 			this->tabPage3->Controls->Add(this->textBox2);
 			this->tabPage3->Controls->Add(this->button8);
 			this->tabPage3->Controls->Add(this->button7);
@@ -519,35 +556,40 @@ namespace Course_management {
 			this->tabPage3->Controls->Add(this->dataGridView3);
 			this->tabPage3->Controls->Add(this->label8);
 			this->tabPage3->Controls->Add(this->shapeContainer3);
-			this->tabPage3->Location = System::Drawing::Point(4, 25);
+			this->tabPage3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->tabPage3->ForeColor = System::Drawing::Color::LightYellow;
+			this->tabPage3->Location = System::Drawing::Point(4, 30);
 			this->tabPage3->Name = L"tabPage3";
 			this->tabPage3->Size = System::Drawing::Size(765, 425);
 			this->tabPage3->TabIndex = 2;
 			this->tabPage3->Text = L"Messages";
-			this->tabPage3->UseVisualStyleBackColor = true;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(22, 383);
+			this->textBox2->Location = System::Drawing::Point(22, 389);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(589, 20);
+			this->textBox2->Size = System::Drawing::Size(589, 24);
 			this->textBox2->TabIndex = 20;
 			this->textBox2->Text = L"Write Reply Here";
 			// 
 			// button8
 			// 
+			this->button8->ForeColor = System::Drawing::Color::Olive;
 			this->button8->Location = System::Drawing::Point(617, 283);
 			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(40, 21);
+			this->button8->Size = System::Drawing::Size(42, 30);
 			this->button8->TabIndex = 19;
 			this->button8->Text = L"Go";
 			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &facultyhome::button8_Click);
 			// 
 			// button7
 			// 
+			this->button7->ForeColor = System::Drawing::Color::Olive;
 			this->button7->Location = System::Drawing::Point(617, 383);
 			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(40, 21);
+			this->button7->Size = System::Drawing::Size(42, 30);
 			this->button7->TabIndex = 18;
 			this->button7->Text = L"Go";
 			this->button7->UseVisualStyleBackColor = true;
@@ -555,79 +597,89 @@ namespace Course_management {
 			// label16
 			// 
 			this->label16->AutoSize = true;
-			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label16->Location = System::Drawing::Point(22, 357);
+			this->label16->BackColor = System::Drawing::Color::Transparent;
+			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label16->ForeColor = System::Drawing::Color::LightYellow;
+			this->label16->Location = System::Drawing::Point(22, 361);
 			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(92, 16);
+			this->label16->Size = System::Drawing::Size(115, 18);
 			this->label16->TabIndex = 17;
 			this->label16->Text = L"Select Course";
 			// 
 			// comboBox4
 			// 
 			this->comboBox4->FormattingEnabled = true;
-			this->comboBox4->Location = System::Drawing::Point(120, 356);
+			this->comboBox4->Location = System::Drawing::Point(156, 358);
 			this->comboBox4->Name = L"comboBox4";
-			this->comboBox4->Size = System::Drawing::Size(93, 21);
+			this->comboBox4->Size = System::Drawing::Size(93, 26);
 			this->comboBox4->TabIndex = 16;
 			// 
 			// label17
 			// 
 			this->label17->AutoSize = true;
-			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->label17->BackColor = System::Drawing::Color::Transparent;
+			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label17->ForeColor = System::Drawing::Color::LightYellow;
 			this->label17->Location = System::Drawing::Point(19, 336);
 			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(136, 16);
+			this->label17->Size = System::Drawing::Size(170, 18);
 			this->label17->TabIndex = 15;
 			this->label17->Text = L"Post Course Updates";
 			// 
 			// label15
 			// 
 			this->label15->AutoSize = true;
-			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->label15->BackColor = System::Drawing::Color::Transparent;
+			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label15->ForeColor = System::Drawing::Color::LightYellow;
 			this->label15->Location = System::Drawing::Point(21, 257);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(122, 16);
+			this->label15->Size = System::Drawing::Size(149, 18);
 			this->label15->TabIndex = 10;
 			this->label15->Text = L"Select Message ID";
 			// 
 			// comboBox3
 			// 
 			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Location = System::Drawing::Point(149, 256);
+			this->comboBox3->Location = System::Drawing::Point(156, 256);
 			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(116, 21);
+			this->comboBox3->Size = System::Drawing::Size(116, 26);
 			this->comboBox3->TabIndex = 9;
 			// 
 			// label14
 			// 
 			this->label14->AutoSize = true;
-			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->label14->BackColor = System::Drawing::Color::Transparent;
+			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label14->ForeColor = System::Drawing::Color::LightYellow;
 			this->label14->Location = System::Drawing::Point(32, 221);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(44, 16);
+			this->label14->Size = System::Drawing::Size(50, 18);
 			this->label14->TabIndex = 7;
 			this->label14->Text = L"Reply";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(22, 283);
+			this->textBox1->Location = System::Drawing::Point(22, 287);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(589, 20);
+			this->textBox1->Size = System::Drawing::Size(589, 24);
 			this->textBox1->TabIndex = 6;
 			this->textBox1->Text = L"Write Reply Here";
 			// 
 			// label13
 			// 
 			this->label13->AutoSize = true;
-			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->label13->BackColor = System::Drawing::Color::Transparent;
+			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label13->ForeColor = System::Drawing::Color::LightYellow;
 			this->label13->Location = System::Drawing::Point(32, 19);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(72, 16);
+			this->label13->Size = System::Drawing::Size(85, 18);
 			this->label13->TabIndex = 5;
 			this->label13->Text = L"Messages";
 			// 
@@ -646,9 +698,11 @@ namespace Course_management {
 			// label8
 			// 
 			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label8->Location = System::Drawing::Point(650, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(35, 13);
+			this->label8->Size = System::Drawing::Size(52, 18);
 			this->label8->TabIndex = 3;
 			this->label8->Text = L"label8";
 			// 
@@ -702,6 +756,7 @@ namespace Course_management {
 			this->ClientSize = System::Drawing::Size(776, 457);
 			this->Controls->Add(this->button9);
 			this->Controls->Add(this->tabControl1);
+			this->MaximizeBox = false;
 			this->Name = L"facultyhome";
 			this->Text = L"facultyhome";
 			this->Load += gcnew System::EventHandler(this, &facultyhome::facultyhome_Load);
@@ -747,7 +802,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) 
 		 {
 			
-		removeappointment^ obj1= gcnew removeappointment;
+		removeappointment^ obj1= gcnew removeappointment(userid);
 			 obj1->Show(this);
 
 			 
@@ -824,6 +879,7 @@ private: System::Void facultyhome_Load(System::Object^  sender, System::EventArg
 			 {
 				 comboBox1->Items->Add((reader->GetString(1))+","+(reader->GetString(2)));
 				 comboBox2->Items->Add((reader->GetString(1))+","+(reader->GetString(2)));
+				 comboBox4->Items->Add((reader->GetString(1))+","+(reader->GetString(2)));
 			 }
 			 con->Close();
 			 //comboBox1->DataMember="std";
@@ -840,6 +896,31 @@ private: System::Void facultyhome_Load(System::Object^  sender, System::EventArg
 //				//comboBox1->Items->Add( dir[i] );
 //				comboBox2->Items->Add( dir[i] );
 //			}	
+			 MySqlCommand^ cmd1 = gcnew MySqlCommand("Select username from course_management.student_list;",con);
+			 con->Open();
+			 reader=cmd1->ExecuteReader();
+			 while(reader->Read())
+			 {
+				 comboBox3->Items->Add(reader->GetString(0));
+			 }
+			 con->Close();
+			 MySqlCommand^ cmd2 = gcnew MySqlCommand("Select username from course_management.faculty_list;",con);
+			 con->Open();
+			 reader=cmd2->ExecuteReader();
+			 while(reader->Read())
+			 {
+				 comboBox3->Items->Add(reader->GetString(0));
+			 }
+			 con->Close();
+			 MySqlCommand^ cmd3 = gcnew MySqlCommand("Select username from course_management.admin_list;",con);
+			 con->Open();
+			 reader=cmd3->ExecuteReader();
+			 while(reader->Read())
+			 {
+				 comboBox3->Items->Add(reader->GetString(0));
+			 }
+			 con->Close();
+
 		 
 		 
 		 
@@ -854,6 +935,17 @@ private: System::Void button5_Click(System::Object^  sender, System::EventArgs^ 
 		removingcourse^ obj= gcnew removingcourse(userid);
 			 obj->Show(this);
 		
+		 }
+private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			 DateTime now=DateTime::Now;
+			 String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
+			 MySqlConnection^ con=gcnew MySqlConnection(connectstr);
+			 MySqlCommand^ cmd=gcnew MySqlCommand("INSERT INTO course_management.messages (`from`, `to`, `description`, `time`) VALUES ('"+userid+"', '"+comboBox1->Text+"', '"+textBox1->Text+"', '"+now.ToString("yyyy-MM-dd HH:mm:ss")+"');",con);
+			 con->Open();
+			 cmd->ExecuteNonQuery();
+			 con->Close();
+
 		 }
 };
 }

@@ -1,39 +1,20 @@
-﻿Build started 09-Mar-14 7:46:46 PM.
-     1>Project "G:\Course_management\Course_management\Course_management.vcxproj" on node 2 (build target(s)).
+﻿Build started 10/3/2014 12:44:30 AM.
+     1>Project "C:\Users\Pulkit\Downloads\Course_Management_System\Course_management\Course_management.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Course_management.unsuccessfulbuild" because "AlwaysCreate" was specified.
        GenerateTargetFrameworkMonikerAttribute:
        Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\Course_management.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\Microsoft.VisualBasic.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\VBPowerPacks\v10.0\Microsoft.VisualBasic.PowerPacks.Vs.dll" /FU"C:\Program Files (x86)\MySQL\Connector NET 6.6.5\Assemblies\v4.0\MySql.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.DirectoryServices.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt stdafx.cpp /clr:nostdlib 
-         stdafx.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Course_management.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\Microsoft.VisualBasic.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\VBPowerPacks\v10.0\Microsoft.VisualBasic.PowerPacks.Vs.dll" /FU"C:\Program Files (x86)\MySQL\Connector NET 6.6.5\Assemblies\v4.0\MySql.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.DirectoryServices.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt addfaculty.cpp addingcourse.cpp addStudent.cpp "admin main form.cpp" AppointmentAdder.cpp AssemblyInfo.cpp Course_management.cpp deletethisform.cpp facultyhome.cpp Form2.cpp notes.cpp removeappointment.cpp removingcourse.cpp sendmessage.cpp signupform.cpp studentform.cpp StudentList.cpp studentrecord.cpp /clr:nostdlib 
-         addfaculty.cpp
-         addingcourse.cpp
-         addStudent.cpp
-         admin main form.cpp
-         AppointmentAdder.cpp
-         AssemblyInfo.cpp
-         Course_management.cpp
-         deletethisform.cpp
-         facultyhome.cpp
-         Form2.cpp
-         notes.cpp
-         removeappointment.cpp
-         removingcourse.cpp
-         sendmessage.cpp
-         signupform.cpp
-         studentform.cpp
-         StudentList.cpp
-         studentrecord.cpp
-         Generating Code...
+         All outputs are up-to-date.
+         All outputs are up-to-date.
          All outputs are up-to-date.
        CoreResGen:
          No resources are out of date with respect to their source files. Skipping resource generation.
        ResourceCompile:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Debug\app.res" app.rc 
+         All outputs are up-to-date.
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\Course_management\Debug\Course_management.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\Course_management.addingcourse.resources /ASSEMBLYRESOURCE:Debug\Course_management.adminmainform.resources /ASSEMBLYRESOURCE:Debug\Course_management.AppointmentAdder.resources /ASSEMBLYRESOURCE:Debug\Course_management.facultyhome.resources /ASSEMBLYRESOURCE:Debug\Course_management.Form1.resources /ASSEMBLYRESOURCE:Debug\Course_management.Form2.resources /ASSEMBLYRESOURCE:Debug\Course_management.notes.resources /ASSEMBLYRESOURCE:Debug\Course_management.removeappointment.resources /ASSEMBLYRESOURCE:Debug\Course_management.removingcourse.resources /ASSEMBLYRESOURCE:Debug\Course_management.studentform.resources /ASSEMBLYRESOURCE:Debug\Course_management.StudentList.resources /ASSEMBLYRESOURCE:Debug\Course_management.studentrecord.resources /MANIFEST /ManifestFile:"Debug\Course_management.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"G:\Course_management\Debug\Course_management.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\pulkit\documents\visual studio 2010\Projects\Setup1\Debug\Course_management.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\Course_management.addentry.resources /ASSEMBLYRESOURCE:Debug\Course_management.addfaculty.resources /ASSEMBLYRESOURCE:Debug\Course_management.addingcourse.resources /ASSEMBLYRESOURCE:Debug\Course_management.addStudent.resources /ASSEMBLYRESOURCE:Debug\Course_management.adminmainform.resources /ASSEMBLYRESOURCE:Debug\Course_management.AppointmentAdder.resources /ASSEMBLYRESOURCE:Debug\Course_management.facultyhome.resources /ASSEMBLYRESOURCE:Debug\Course_management.Form1.resources /ASSEMBLYRESOURCE:Debug\Course_management.notes.resources /ASSEMBLYRESOURCE:Debug\Course_management.removeappointment.resources /ASSEMBLYRESOURCE:Debug\Course_management.removingcourse.resources /ASSEMBLYRESOURCE:Debug\Course_management.sendmessage.resources /ASSEMBLYRESOURCE:Debug\Course_management.signupform.resources /ASSEMBLYRESOURCE:Debug\Course_management.studentform.resources /ASSEMBLYRESOURCE:Debug\Course_management.StudentList.resources /ASSEMBLYRESOURCE:Debug\Course_management.studentrecord.resources /MANIFEST /ManifestFile:"Debug\Course_management.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"c:\users\pulkit\documents\visual studio 2010\Projects\Setup1\Debug\Course_management.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         Debug\addentry.obj
          Debug\addfaculty.obj
          Debug\addingcourse.obj
          Debug\addStudent.obj
@@ -54,9 +35,14 @@
          Debug\StudentList.obj
          Debug\studentrecord.obj
          "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Platforms\Win32\Microsoft.Cpp.Win32.Targets(268,5): warning MSB4220: Waiting for the currently executing task "Link" to cancel.
-     1>Done Building Project "G:\Course_management\Course_management\Course_management.vcxproj" (build target(s)) -- FAILED.
+         Course_management.vcxproj -> c:\users\pulkit\documents\visual studio 2010\Projects\Setup1\Debug\Course_management.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"c:\users\pulkit\documents\visual studio 2010\Projects\Setup1\Debug\Course_management.exe;#1" /manifest Debug\Course_management.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\Course_management.unsuccessfulbuild".
+         Touching "Debug\Course_management.lastbuildstate".
+     1>Done Building Project "C:\Users\Pulkit\Downloads\Course_Management_System\Course_management\Course_management.vcxproj" (build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:02:25.74
+Time Elapsed 00:00:02.59

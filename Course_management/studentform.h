@@ -1,5 +1,5 @@
 #pragma once
-
+#include "addentry.h"
 namespace Course_management {
 
 	using namespace System;
@@ -59,7 +59,7 @@ namespace Course_management {
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label1;
-	private: System::Windows::Forms::LinkLabel^  linkLabel2;
+
 	private: System::Windows::Forms::LinkLabel^  linkLabel1;
 	private: System::Windows::Forms::DataGridView^  dataGridView1;
 	private: System::Windows::Forms::Label^  label7;
@@ -97,6 +97,7 @@ namespace Course_management {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(studentform::typeid));
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->PersonalData = (gcnew System::Windows::Forms::TabPage());
@@ -107,7 +108,6 @@ namespace Course_management {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->Courses = (gcnew System::Windows::Forms::TabPage());
-			this->linkLabel2 = (gcnew System::Windows::Forms::LinkLabel());
 			this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->label7 = (gcnew System::Windows::Forms::Label());
@@ -149,7 +149,7 @@ namespace Course_management {
 			this->flowLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->flowLayoutPanel1->Location = System::Drawing::Point(0, 0);
 			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
-			this->flowLayoutPanel1->Size = System::Drawing::Size(854, 425);
+			this->flowLayoutPanel1->Size = System::Drawing::Size(850, 414);
 			this->flowLayoutPanel1->TabIndex = 0;
 			// 
 			// tabControl1
@@ -159,6 +159,8 @@ namespace Course_management {
 			this->tabControl1->Controls->Add(this->tabPage3);
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
+			this->tabControl1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->tabControl1->Location = System::Drawing::Point(3, 3);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
@@ -167,32 +169,40 @@ namespace Course_management {
 			// 
 			// PersonalData
 			// 
+			this->PersonalData->BackColor = System::Drawing::Color::LightYellow;
+			this->PersonalData->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"PersonalData.BackgroundImage")));
+			this->PersonalData->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->PersonalData->Controls->Add(this->label6);
 			this->PersonalData->Controls->Add(this->label5);
 			this->PersonalData->Controls->Add(this->label4);
 			this->PersonalData->Controls->Add(this->label3);
 			this->PersonalData->Controls->Add(this->label2);
 			this->PersonalData->Controls->Add(this->label1);
-			this->PersonalData->Location = System::Drawing::Point(4, 22);
+			this->PersonalData->Location = System::Drawing::Point(4, 27);
 			this->PersonalData->Name = L"PersonalData";
 			this->PersonalData->Padding = System::Windows::Forms::Padding(3);
-			this->PersonalData->Size = System::Drawing::Size(843, 384);
+			this->PersonalData->Size = System::Drawing::Size(843, 379);
 			this->PersonalData->TabIndex = 0;
 			this->PersonalData->Text = L"Personal";
-			this->PersonalData->UseVisualStyleBackColor = true;
 			// 
 			// label6
 			// 
+			this->label6->BackColor = System::Drawing::Color::Transparent;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label6->ForeColor = System::Drawing::Color::Olive;
 			this->label6->Location = System::Drawing::Point(387, 151);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(201, 29);
+			this->label6->Size = System::Drawing::Size(195, 29);
 			this->label6->TabIndex = 5;
 			this->label6->Click += gcnew System::EventHandler(this, &studentform::label6_Click);
 			// 
 			// label5
 			// 
+			this->label5->BackColor = System::Drawing::Color::Transparent;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::Color::Olive;
 			this->label5->Location = System::Drawing::Point(257, 151);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(138, 29);
@@ -201,18 +211,22 @@ namespace Course_management {
 			// 
 			// label4
 			// 
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->label4->BackColor = System::Drawing::Color::Transparent;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::Color::Olive;
 			this->label4->Location = System::Drawing::Point(383, 118);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(205, 29);
+			this->label4->Size = System::Drawing::Size(199, 29);
 			this->label4->TabIndex = 3;
 			this->label4->Click += gcnew System::EventHandler(this, &studentform::label4_Click);
 			// 
 			// label3
 			// 
+			this->label3->BackColor = System::Drawing::Color::Transparent;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::Color::Olive;
 			this->label3->Location = System::Drawing::Point(309, 118);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(77, 29);
@@ -223,9 +237,9 @@ namespace Course_management {
 			// 
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(331, 61);
+			this->label2->Location = System::Drawing::Point(257, 49);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(213, 30);
+			this->label2->Size = System::Drawing::Size(213, 23);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Personal Information";
 			// 
@@ -233,46 +247,40 @@ namespace Course_management {
 			// 
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(248, 21);
+			this->label1->Location = System::Drawing::Point(196, 22);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(386, 27);
+			this->label1->Size = System::Drawing::Size(386, 20);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"COURSE MANAGEMENT SYSTEM";
 			// 
 			// Courses
 			// 
-			this->Courses->Controls->Add(this->linkLabel2);
+			this->Courses->BackColor = System::Drawing::Color::LightYellow;
+			this->Courses->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"Courses.BackgroundImage")));
+			this->Courses->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->Courses->Controls->Add(this->linkLabel1);
 			this->Courses->Controls->Add(this->dataGridView1);
 			this->Courses->Controls->Add(this->label7);
 			this->Courses->Controls->Add(this->monthCalendar1);
-			this->Courses->Location = System::Drawing::Point(4, 22);
+			this->Courses->Location = System::Drawing::Point(4, 27);
 			this->Courses->Name = L"Courses";
 			this->Courses->Padding = System::Windows::Forms::Padding(3);
-			this->Courses->Size = System::Drawing::Size(843, 384);
+			this->Courses->Size = System::Drawing::Size(843, 379);
 			this->Courses->TabIndex = 1;
 			this->Courses->Text = L"Planner";
-			this->Courses->UseVisualStyleBackColor = true;
-			// 
-			// linkLabel2
-			// 
-			this->linkLabel2->AutoSize = true;
-			this->linkLabel2->Location = System::Drawing::Point(242, 234);
-			this->linkLabel2->Name = L"linkLabel2";
-			this->linkLabel2->Size = System::Drawing::Size(38, 13);
-			this->linkLabel2->TabIndex = 4;
-			this->linkLabel2->TabStop = true;
-			this->linkLabel2->Text = L"Delete";
 			// 
 			// linkLabel1
 			// 
 			this->linkLabel1->AutoSize = true;
-			this->linkLabel1->Location = System::Drawing::Point(200, 234);
+			this->linkLabel1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->linkLabel1->Location = System::Drawing::Point(74, 183);
 			this->linkLabel1->Name = L"linkLabel1";
-			this->linkLabel1->Size = System::Drawing::Size(26, 13);
+			this->linkLabel1->Size = System::Drawing::Size(36, 18);
 			this->linkLabel1->TabIndex = 3;
 			this->linkLabel1->TabStop = true;
 			this->linkLabel1->Text = L"Add";
+			this->linkLabel1->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &studentform::linkLabel1_LinkClicked);
 			// 
 			// dataGridView1
 			// 
@@ -280,7 +288,7 @@ namespace Course_management {
 			this->dataGridView1->AllowUserToDeleteRows = false;
 			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(366, 82);
+			this->dataGridView1->Location = System::Drawing::Point(281, 60);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->Size = System::Drawing::Size(255, 114);
@@ -290,7 +298,7 @@ namespace Course_management {
 			// 
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(362, 45);
+			this->label7->Location = System::Drawing::Point(277, 34);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(291, 23);
 			this->label7->TabIndex = 1;
@@ -298,38 +306,43 @@ namespace Course_management {
 			// 
 			// monthCalendar1
 			// 
-			this->monthCalendar1->Location = System::Drawing::Point(53, 34);
+			this->monthCalendar1->Location = System::Drawing::Point(9, 12);
 			this->monthCalendar1->Name = L"monthCalendar1";
 			this->monthCalendar1->TabIndex = 0;
 			// 
 			// tabPage3
 			// 
+			this->tabPage3->BackColor = System::Drawing::Color::LightYellow;
+			this->tabPage3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"tabPage3.BackgroundImage")));
+			this->tabPage3->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->tabPage3->Controls->Add(this->label10);
 			this->tabPage3->Controls->Add(this->comboBox1);
 			this->tabPage3->Controls->Add(this->dataGridView2);
-			this->tabPage3->Location = System::Drawing::Point(4, 22);
+			this->tabPage3->Location = System::Drawing::Point(4, 27);
 			this->tabPage3->Name = L"tabPage3";
 			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage3->Size = System::Drawing::Size(843, 384);
+			this->tabPage3->Size = System::Drawing::Size(843, 379);
 			this->tabPage3->TabIndex = 2;
 			this->tabPage3->Text = L"Courses";
-			this->tabPage3->UseVisualStyleBackColor = true;
 			// 
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(64, 19);
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label10->ForeColor = System::Drawing::Color::Olive;
+			this->label10->Location = System::Drawing::Point(33, 9);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(73, 13);
+			this->label10->Size = System::Drawing::Size(115, 18);
 			this->label10->TabIndex = 3;
 			this->label10->Text = L"Select Course";
 			// 
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(36, 35);
+			this->comboBox1->Location = System::Drawing::Point(139, 7);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(121, 21);
+			this->comboBox1->Size = System::Drawing::Size(121, 26);
 			this->comboBox1->TabIndex = 2;
 			// 
 			// dataGridView2
@@ -338,14 +351,17 @@ namespace Course_management {
 			this->dataGridView2->AllowUserToDeleteRows = false;
 			this->dataGridView2->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView2->Location = System::Drawing::Point(204, 23);
+			this->dataGridView2->Location = System::Drawing::Point(6, 40);
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->ReadOnly = true;
-			this->dataGridView2->Size = System::Drawing::Size(565, 329);
+			this->dataGridView2->Size = System::Drawing::Size(508, 315);
 			this->dataGridView2->TabIndex = 1;
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->BackColor = System::Drawing::Color::LightYellow;
+			this->tabPage1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"tabPage1.BackgroundImage")));
+			this->tabPage1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->tabPage1->Controls->Add(this->comboBox2);
 			this->tabPage1->Controls->Add(this->button1);
 			this->tabPage1->Controls->Add(this->textBox1);
@@ -354,25 +370,24 @@ namespace Course_management {
 			this->tabPage1->Controls->Add(this->label8);
 			this->tabPage1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->tabPage1->Location = System::Drawing::Point(4, 22);
+			this->tabPage1->Location = System::Drawing::Point(4, 27);
 			this->tabPage1->Name = L"tabPage1";
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage1->Size = System::Drawing::Size(843, 384);
+			this->tabPage1->Size = System::Drawing::Size(843, 379);
 			this->tabPage1->TabIndex = 3;
 			this->tabPage1->Text = L"Messages";
-			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
 			// comboBox2
 			// 
 			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Location = System::Drawing::Point(57, 313);
+			this->comboBox2->Location = System::Drawing::Point(154, 275);
 			this->comboBox2->Name = L"comboBox2";
 			this->comboBox2->Size = System::Drawing::Size(121, 28);
 			this->comboBox2->TabIndex = 5;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(580, 342);
+			this->button1->Location = System::Drawing::Point(579, 309);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(43, 26);
 			this->button1->TabIndex = 4;
@@ -383,7 +398,7 @@ namespace Course_management {
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(57, 347);
+			this->textBox1->Location = System::Drawing::Point(56, 309);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(517, 21);
 			this->textBox1->TabIndex = 3;
@@ -392,11 +407,12 @@ namespace Course_management {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label9->ForeColor = System::Drawing::Color::Olive;
 			this->label9->Location = System::Drawing::Point(53, 275);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(141, 24);
+			this->label9->Size = System::Drawing::Size(114, 18);
 			this->label9->TabIndex = 2;
 			this->label9->Text = L"Select Faculty";
 			// 
@@ -406,43 +422,49 @@ namespace Course_management {
 			this->dataGridView3->AllowUserToDeleteRows = false;
 			this->dataGridView3->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView3->Location = System::Drawing::Point(56, 59);
+			this->dataGridView3->Location = System::Drawing::Point(6, 41);
 			this->dataGridView3->Name = L"dataGridView3";
 			this->dataGridView3->ReadOnly = true;
-			this->dataGridView3->Size = System::Drawing::Size(741, 201);
+			this->dataGridView3->Size = System::Drawing::Size(513, 231);
 			this->dataGridView3->TabIndex = 1;
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label8->ForeColor = System::Drawing::Color::Olive;
 			this->label8->Location = System::Drawing::Point(52, 19);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(104, 24);
+			this->label8->Size = System::Drawing::Size(85, 18);
 			this->label8->TabIndex = 0;
 			this->label8->Text = L"Messages";
 			// 
 			// tabPage2
 			// 
+			this->tabPage2->BackColor = System::Drawing::Color::LightYellow;
+			this->tabPage2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"tabPage2.BackgroundImage")));
+			this->tabPage2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->tabPage2->Controls->Add(this->button3);
 			this->tabPage2->Controls->Add(this->comboBox3);
 			this->tabPage2->Controls->Add(this->label12);
 			this->tabPage2->Controls->Add(this->dataGridView4);
 			this->tabPage2->Controls->Add(this->label11);
-			this->tabPage2->Location = System::Drawing::Point(4, 22);
+			this->tabPage2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->tabPage2->ForeColor = System::Drawing::Color::Olive;
+			this->tabPage2->Location = System::Drawing::Point(4, 27);
 			this->tabPage2->Name = L"tabPage2";
 			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(843, 384);
+			this->tabPage2->Size = System::Drawing::Size(843, 379);
 			this->tabPage2->TabIndex = 4;
 			this->tabPage2->Text = L"Register for Course";
-			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(184, 275);
+			this->button3->Location = System::Drawing::Point(183, 276);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(75, 23);
+			this->button3->Size = System::Drawing::Size(78, 30);
 			this->button3->TabIndex = 4;
 			this->button3->Text = L"Register";
 			this->button3->UseVisualStyleBackColor = true;
@@ -450,19 +472,20 @@ namespace Course_management {
 			// comboBox3
 			// 
 			this->comboBox3->FormattingEnabled = true;
-			this->comboBox3->Location = System::Drawing::Point(56, 278);
+			this->comboBox3->Location = System::Drawing::Point(52, 276);
 			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(121, 21);
+			this->comboBox3->Size = System::Drawing::Size(121, 26);
 			this->comboBox3->TabIndex = 3;
 			// 
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label12->ForeColor = System::Drawing::Color::Olive;
 			this->label12->Location = System::Drawing::Point(52, 254);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(122, 20);
+			this->label12->Size = System::Drawing::Size(115, 18);
 			this->label12->TabIndex = 2;
 			this->label12->Text = L"Select Course";
 			// 
@@ -471,27 +494,29 @@ namespace Course_management {
 			this->dataGridView4->AllowUserToAddRows = false;
 			this->dataGridView4->AllowUserToDeleteRows = false;
 			this->dataGridView4->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->dataGridView4->AutoSizeRowsMode = System::Windows::Forms::DataGridViewAutoSizeRowsMode::DisplayedCells;
 			this->dataGridView4->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView4->Location = System::Drawing::Point(52, 65);
 			this->dataGridView4->Name = L"dataGridView4";
 			this->dataGridView4->ReadOnly = true;
-			this->dataGridView4->Size = System::Drawing::Size(691, 162);
+			this->dataGridView4->Size = System::Drawing::Size(474, 186);
 			this->dataGridView4->TabIndex = 1;
 			// 
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label11->ForeColor = System::Drawing::Color::Olive;
 			this->label11->Location = System::Drawing::Point(48, 21);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(152, 20);
+			this->label11->Size = System::Drawing::Size(143, 18);
 			this->label11->TabIndex = 0;
 			this->label11->Text = L"Courses Available";
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(651, 0);
+			this->button2->Location = System::Drawing::Point(785, 0);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(52, 23);
 			this->button2->TabIndex = 1;
@@ -502,9 +527,10 @@ namespace Course_management {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(854, 425);
+			this->ClientSize = System::Drawing::Size(850, 414);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->flowLayoutPanel1);
+			this->MaximizeBox = false;
 			this->Name = L"studentform";
 			this->Text = L"studentform";
 			this->Load += gcnew System::EventHandler(this, &studentform::studentform_Load);
@@ -573,5 +599,9 @@ private: System::Void label6_Click(System::Object^  sender, System::EventArgs^  
 			 }
 			 con->Close();
 			 }
+private: System::Void linkLabel1_LinkClicked(System::Object^  sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^  e) {
+			 addentry^ obj = gcnew addentry(userid);
+			 obj->Show();
+		 }
 };
 }

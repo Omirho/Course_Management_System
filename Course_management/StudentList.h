@@ -61,11 +61,11 @@ namespace Course_management {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(18, 20);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(19, 28);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(105, 16);
+			this->label1->Size = System::Drawing::Size(118, 19);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Name of Course";
 			this->label1->Click += gcnew System::EventHandler(this, &StudentList::label1_Click);
@@ -86,9 +86,11 @@ namespace Course_management {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::Linen;
 			this->ClientSize = System::Drawing::Size(690, 240);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->label1);
+			this->MaximizeBox = false;
 			this->Name = L"StudentList";
 			this->Text = L"StudentList";
 			this->Load += gcnew System::EventHandler(this, &StudentList::StudentList_Load);

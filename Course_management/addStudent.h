@@ -27,8 +27,9 @@ namespace Course_management {
 		String^ name;
 		String^ usertype;
 		String^ s;
-	private: System::Windows::Forms::Label^  label1;
+
 	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::Label^  label1;
 	public: 
 		String^ type;
 
@@ -104,9 +105,10 @@ namespace Course_management {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(addStudent::typeid));
 			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// flowLayoutPanel1
@@ -114,22 +116,12 @@ namespace Course_management {
 			this->flowLayoutPanel1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom) 
 				| System::Windows::Forms::AnchorStyles::Left) 
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->flowLayoutPanel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), 
-				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
+			this->flowLayoutPanel1->BackColor = System::Drawing::Color::Transparent;
 			this->flowLayoutPanel1->FlowDirection = System::Windows::Forms::FlowDirection::TopDown;
 			this->flowLayoutPanel1->Location = System::Drawing::Point(35, 39);
 			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
-			this->flowLayoutPanel1->Size = System::Drawing::Size(361, 133);
+			this->flowLayoutPanel1->Size = System::Drawing::Size(499, 231);
 			this->flowLayoutPanel1->TabIndex = 6;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(186, 13);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(35, 13);
-			this->label1->TabIndex = 7;
-			this->label1->Text = L"label1";
 			// 
 			// button1
 			// 
@@ -138,7 +130,7 @@ namespace Course_management {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::Teal;
-			this->button1->Location = System::Drawing::Point(165, 198);
+			this->button1->Location = System::Drawing::Point(234, 296);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(88, 30);
 			this->button1->TabIndex = 8;
@@ -146,14 +138,28 @@ namespace Course_management {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &addStudent::button1_Click);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::DarkGoldenrod;
+			this->label1->Location = System::Drawing::Point(186, 13);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(157, 19);
+			this->label1->TabIndex = 7;
+			this->label1->Text = L"PENDING REQUESTS";
+			// 
 			// addStudent
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(423, 262);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(560, 360);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->flowLayoutPanel1);
+			this->MaximizeBox = false;
 			this->Name = L"addStudent";
 			this->Text = L"addStudent";
 			this->Load += gcnew System::EventHandler(this, &addStudent::addStudent_Load);

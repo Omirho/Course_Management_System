@@ -15,9 +15,11 @@ namespace Course_management {
 	public ref class removeappointment : public System::Windows::Forms::Form
 	{
 	public:
-		removeappointment(void)
+		String^ userid;
+		removeappointment(String^ u)
 		{
 			InitializeComponent();
+			userid=u;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -52,6 +54,7 @@ namespace Course_management {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(removeappointment::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -60,11 +63,13 @@ namespace Course_management {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(36, 17);
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::LightYellow;
+			this->label1->Location = System::Drawing::Point(31, 15);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(79, 16);
+			this->label1->Size = System::Drawing::Size(89, 19);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Select date:";
 			// 
@@ -77,9 +82,11 @@ namespace Course_management {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(132, 52);
+			this->button1->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->button1->Location = System::Drawing::Point(109, 41);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(132, 23);
+			this->button1->Size = System::Drawing::Size(75, 32);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Remove";
 			this->button1->UseVisualStyleBackColor = true;
@@ -89,7 +96,8 @@ namespace Course_management {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(346, 96);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(312, 89);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->dateTimePicker1);
 			this->Controls->Add(this->label1);
@@ -103,7 +111,14 @@ namespace Course_management {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) 
 			 {
-				//MessageBox::Show("Any text here");
+				MessageBox::Show("Appointment Removed!!");
+				String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
+				MySqlConnection^ con=gcnew MySqlConnection(connectstr);
+				MySqlCommand^ cmd=gcnew MySqlCommand("delete from course_management.calendar where user='"+userid+"' and date='"+dateTimePicker1->Value.ToString("yyyy-MM-dd")+"';",con);
+				con->Open();
+				cmd->ExecuteNonQuery();
+				this->Close();
+
 			 }
 	};
 }

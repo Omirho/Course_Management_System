@@ -70,9 +70,11 @@ namespace Course_management {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(273, 32);
+			this->button1->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->button1->Location = System::Drawing::Point(273, 29);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(81, 21);
+			this->button1->Size = System::Drawing::Size(86, 32);
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"Remove";
 			this->button1->UseVisualStyleBackColor = true;
@@ -93,10 +95,12 @@ namespace Course_management {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(388, 97);
+			this->BackColor = System::Drawing::Color::LightGray;
+			this->ClientSize = System::Drawing::Size(378, 82);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->comboBox1);
+			this->MaximizeBox = false;
 			this->Name = L"removingcourse";
 			this->Text = L"removingcourse";
 			this->Load += gcnew System::EventHandler(this, &removingcourse::removingcourse_Load);
@@ -107,8 +111,15 @@ namespace Course_management {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) 
 			 {
-				 
-		String^ path2 = comboBox1->Text;
+				  String^ delimStr = ",";
+			 String^ k =  comboBox1->Text;
+			 array<String^>^ words;
+			 array<Char>^ delimiter = delimStr->ToCharArray();
+			 words = k->Split(delimiter);
+			 String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
+			 MySqlConnection^ con=gcnew MySqlConnection(connectstr);
+			 MySqlCommand^ cmd = gcnew MySqlCommand("delete from course_management.courses_list where columnname='"+words[0]+"+"+words[1]+"';",con);
+		String^ path2 = "c:\\Course_Management_System\\"+words[0]+"+"+words[1];
 		  DirectoryInfo^ di1 = gcnew DirectoryInfo( path2 );
 		  if ( Directory::Exists( path2 ) )
       {
@@ -118,20 +129,35 @@ namespace Course_management {
       }
 		  //MessageBox::Show("This course doesnot exists","Error!!",MessageBoxButtons::OK,MessageBoxIcon::Exclamation);
  this->Close();
+
 			 }
 	private: System::Void removingcourse_Load(System::Object^  sender, System::EventArgs^  e) 
 			 {
 				// String^ name= "Movies";
-			 String^ path = "c:\\";
-			 array<String^>^ dir = Directory::GetDirectories(path );
-			 for (int i=0; i<dir->Length; i++)
-				//Console::WriteLine(dir[i]);
-			{
+				 //showing courses from the main folder::Course_Management_System
+//			 String^ path ="c://Course_Management_System";
+//			 array<String^>^ dir = Directory::GetDirectories(path );
+//			 for (int i=0; i<dir->Length; i++)
+//				//Console::WriteLine(dir[i]);
+//			{
+//
+////				listBox1->Items->Add( String::Format( dir[i], i ) );
+//				comboBox1->Items->Add( dir[i] );
+//				//comboBox2->Items->Add( dir[i] );
+//			}	
+			 String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
+			 MySqlConnection^ con=gcnew MySqlConnection(connectstr);
+			 MySqlDataReader^ reader;
+			 MySqlCommand^ cmd = gcnew MySqlCommand("Select course_management.courses_list.name,course_management.courses_list.course_no,course_management.courses_list.year from course_management.courses_list,course_management.registrations where course_management.registrations.userid='"+userid+"' and course_management.courses_list.columnname=course_management.registrations.coursecolumnname;",con);
+			 con->Open();
+			 reader=cmd->ExecuteReader();
+			 while(reader->Read())
+			 {
+				 comboBox1->Items->Add((reader->GetString(1))+","+(reader->GetString(2)));
+				 //comboBox2->Items->Add((reader->GetString(1))+","+(reader->GetString(2)));
+			 }
+			 con->Close();
 
-//				listBox1->Items->Add( String::Format( dir[i], i ) );
-				comboBox1->Items->Add( dir[i] );
-				//comboBox2->Items->Add( dir[i] );
-			}	
 			 }
 };
 }

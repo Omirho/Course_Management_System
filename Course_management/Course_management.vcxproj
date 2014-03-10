@@ -90,10 +90,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\..\Desktop\school-classroom-teacher-blackboard-college_315682.jpg" />
+    <None Include="admin-atwork.jpg" />
+    <None Include="Admin_logo_by_lucifercho-d39lpuk.png" />
     <None Include="app.ico" />
+    <None Include="cse_entrance.jpg" />
+    <None Include="deptcse.jpg" />
+    <None Include="image545s.jpg" />
+    <None Include="images.jpg" />
+    <None Include="images123.jpg" />
+    <None Include="images2222.jpg" />
+    <None Include="images234.jpg" />
+    <None Include="images3333.jpg" />
+    <None Include="images33333333.jpg" />
+    <None Include="images555.jpg" />
+    <None Include="images678.jpg" />
+    <None Include="index.jpg" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="addentry.cpp" />
     <ClCompile Include="addfaculty.cpp" />
     <ClCompile Include="addingcourse.cpp" />
     <ClCompile Include="addStudent.cpp" />
@@ -118,6 +134,9 @@
     <ClCompile Include="studentrecord.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="addentry.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="addfaculty.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -140,9 +159,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Form1.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="Form2.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="notes.h">
@@ -176,8 +192,17 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="addentry.resx">
+      <DependentUpon>addentry.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addfaculty.resx">
+      <DependentUpon>addfaculty.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="addingcourse.resx">
       <DependentUpon>addingcourse.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addStudent.resx">
+      <DependentUpon>addStudent.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="adminmainform.resx">
       <DependentUpon>adminmainform.h</DependentUpon>
@@ -192,9 +217,6 @@
       <DependentUpon>Form1.h</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="notes.resx">
       <DependentUpon>notes.h</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +225,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="removingcourse.resx">
       <DependentUpon>removingcourse.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sendmessage.resx">
+      <DependentUpon>sendmessage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="signupform.resx">
+      <DependentUpon>signupform.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="studentform.resx">
       <DependentUpon>studentform.h</DependentUpon>
