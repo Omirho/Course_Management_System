@@ -70,11 +70,15 @@ namespace Course_management {
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->AllowUserToAddRows = false;
+			this->dataGridView1->AllowUserToDeleteRows = false;
+			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridView1->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(12, 47);
 			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->Size = System::Drawing::Size(316, 240);
 			this->dataGridView1->TabIndex = 1;
 			// 

@@ -64,7 +64,8 @@ namespace Course_management
 			while(myReader->Read())
 			{
 				String^ use=myReader->GetString(2);
-				if(String::Compare(use,username)==0)
+				String^ use1=myReader->GetString(5);
+				if(String::Compare(use,username)==0 || String::Compare(use1,r)==0)
 					f=1;
 				key=key+1;
 			}
@@ -83,7 +84,8 @@ namespace Course_management
 			while(myReader->Read())
 			{
 				String^ use=myReader->GetString(2);
-				if(String::Compare(use,username)==0)
+				String^ use1=myReader->GetString(0);
+				if(String::Compare(use,username)==0 || String::Compare(use1,r)==0)
 					f=1;
 				//key=key+1;
 			}
@@ -139,7 +141,7 @@ namespace Course_management
 		if(f==1)
 		{
 			label4->Show();
-			label4->Text="Username already exists,try another one";
+			label4->Text="Username or Roll No. already exists,try another one";
 		}
 		else if(String::IsNullOrEmpty(ans)||String::IsNullOrEmpty(securityques)||String::IsNullOrEmpty(name)||String::IsNullOrEmpty(username)||String::IsNullOrEmpty(usertype)||String::IsNullOrEmpty(pass))
 		{
@@ -186,23 +188,24 @@ namespace Course_management
 				MySqlCommand^ cmdDataBase=gcnew MySqlCommand(cmdText,conDataBase);
 				cmdDataBase->Prepare();
 				cmdDataBase->ExecuteNonQuery();
+				//--------------- asks the user for the course of action to be taken -----------------------//
+				if(MessageBox::Show("Your request has been sent to the admin for approval \n Do you wish to exit?","FORM CLOSING",MessageBoxButtons::YesNo,MessageBoxIcon::Question) == ::System::Windows::Forms::DialogResult::Yes)
+				{
+					Application::Exit();
+				}
+				else
+				{
+					this->Hide();
+					Form1^ obj=gcnew Form1;
+					obj->Show(this);
+				}
 			}
 			catch(Exception^ ex){
 				MessageBox::Show(ex->Message);
 			}
 
-			//--------------- asks the user for the course of action to be taken -----------------------//
+			
 
-			if(MessageBox::Show("Your request has been sent to the admin for approval \n Do you wish to exit?","FORM CLOSING",MessageBoxButtons::YesNo,MessageBoxIcon::Question) == ::System::Windows::Forms::DialogResult::Yes)
-			{
-				Application::Exit();
-			}
-			else
-			{
-				this->Hide();
-				Form1^ obj=gcnew Form1;
-				obj->Show(this);
-			}
 			
 		
 	}

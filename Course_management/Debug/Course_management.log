@@ -1,4 +1,4 @@
-﻿Build started 10/3/2014 5:37:08 PM.
+﻿Build started 10/3/2014 9:08:46 PM.
      1>Project "C:\Users\Pulkit\Documents\GitHub\Course_Management_System\Course_management\Course_management.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Course_management.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -6,15 +6,42 @@
        Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
        ClCompile:
          All outputs are up-to-date.
-         All outputs are up-to-date.
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Course_management.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\Microsoft.VisualBasic.dll" /FU"C:\Program Files\Reference Assemblies\Microsoft\VBPowerPacks\v10.0\Microsoft.VisualBasic.PowerPacks.Vs.dll" /FU"C:\Program Files\MySQL\MySQL Connector Net 6.8.3\Assemblies\v4.0\MySql.Data.dll" /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.DirectoryServices.dll" /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt addfaculty.cpp /clr:nostdlib 
+         addfaculty.cpp
+     1>addfaculty.cpp(28): warning C4101: 'courses' : unreferenced local variable
          All outputs are up-to-date.
        CoreResGen:
          No resources are out of date with respect to their source files. Skipping resource generation.
        ResourceCompile:
          All outputs are up-to-date.
        Link:
-         All outputs are up-to-date.
-         Course_management.vcxproj -> C:\Users\Pulkit\Documents\GitHub\Course_Management_System\Debug\Course_management.exe
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\pulkit\documents\visual studio 2010\Projects\Course_Management_Setup\Debug\Course_management.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\Course_management.addentry.resources /ASSEMBLYRESOURCE:Debug\Course_management.addfaculty.resources /ASSEMBLYRESOURCE:Debug\Course_management.addingcourse.resources /ASSEMBLYRESOURCE:Debug\Course_management.addStudent.resources /ASSEMBLYRESOURCE:Debug\Course_management.adminmainform.resources /ASSEMBLYRESOURCE:Debug\Course_management.AppointmentAdder.resources /ASSEMBLYRESOURCE:Debug\Course_management.deleteentry.resources /ASSEMBLYRESOURCE:Debug\Course_management.facultyhome.resources /ASSEMBLYRESOURCE:Debug\Course_management.facultyrecords.resources /ASSEMBLYRESOURCE:Debug\Course_management.Form1.resources /ASSEMBLYRESOURCE:Debug\Course_management.notes.resources /ASSEMBLYRESOURCE:Debug\Course_management.removeappointment.resources /ASSEMBLYRESOURCE:Debug\Course_management.removingcourse.resources /ASSEMBLYRESOURCE:Debug\Course_management.sendmessage.resources /ASSEMBLYRESOURCE:Debug\Course_management.signupform.resources /ASSEMBLYRESOURCE:Debug\Course_management.studentform.resources /ASSEMBLYRESOURCE:Debug\Course_management.StudentList.resources /ASSEMBLYRESOURCE:Debug\Course_management.studentrecord.resources /MANIFEST /ManifestFile:"Debug\Course_management.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"c:\users\pulkit\documents\visual studio 2010\Projects\Course_Management_Setup\Debug\Course_management.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         Debug\addentry.obj
+         Debug\addfaculty.obj
+         Debug\addingcourse.obj
+         Debug\addStudent.obj
+         "Debug\admin main form.obj"
+         Debug\AppointmentAdder.obj
+         Debug\AssemblyInfo.obj
+         Debug\Course_management.obj
+         Debug\deleteentry.obj
+         Debug\deletethisform.obj
+         Debug\facultyhome.obj
+         Debug\facultyrecords.obj
+         Debug\Form2.obj
+         Debug\notes.obj
+         Debug\removeappointment.obj
+         Debug\removingcourse.obj
+         Debug\sendmessage.obj
+         Debug\signupform.obj
+         Debug\stdafx.obj
+         Debug\studentform.obj
+         Debug\StudentList.obj
+         Debug\studentrecord.obj
+         "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+         Course_management.vcxproj -> c:\users\pulkit\documents\visual studio 2010\Projects\Course_Management_Setup\Debug\Course_management.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"c:\users\pulkit\documents\visual studio 2010\Projects\Course_Management_Setup\Debug\Course_management.exe;#1" /manifest Debug\Course_management.exe.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file "Debug\Course_management.unsuccessfulbuild".
          Touching "Debug\Course_management.lastbuildstate".
@@ -22,4 +49,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.32
+Time Elapsed 00:00:03.34

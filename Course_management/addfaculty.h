@@ -44,8 +44,8 @@ namespace Course_management {
 	private: System::Windows::Forms::TextBox^  textBox3;
 	private: System::Windows::Forms::TextBox^  textBox4;
 	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::Label^  label6;
-	private: System::Windows::Forms::TextBox^  textBox5;
+
+
 	private: System::Windows::Forms::Label^  label7;
 	protected: 
 
@@ -73,8 +73,6 @@ namespace Course_management {
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
@@ -187,26 +185,6 @@ namespace Course_management {
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &addfaculty::button1_Click);
 			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->BackColor = System::Drawing::Color::Transparent;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->label6->ForeColor = System::Drawing::Color::Cyan;
-			this->label6->Location = System::Drawing::Point(29, 203);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(52, 18);
-			this->label6->TabIndex = 10;
-			this->label6->Text = L"label6";
-			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(128, 203);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(100, 20);
-			this->textBox5->TabIndex = 11;
-			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
@@ -225,8 +203,6 @@ namespace Course_management {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(440, 277);
 			this->Controls->Add(this->label7);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->label6);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->textBox3);

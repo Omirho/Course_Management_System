@@ -9,6 +9,7 @@ namespace Course_management {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::IO;
 
 	/// <summary>
 	/// Summary for studentform
@@ -120,6 +121,7 @@ namespace Course_management {
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->monthCalendar1 = (gcnew System::Windows::Forms::MonthCalendar());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
@@ -137,7 +139,6 @@ namespace Course_management {
 			this->dataGridView4 = (gcnew System::Windows::Forms::DataGridView());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->flowLayoutPanel1->SuspendLayout();
 			this->tabControl1->SuspendLayout();
 			this->PersonalData->SuspendLayout();
@@ -345,6 +346,15 @@ namespace Course_management {
 			this->tabPage3->TabIndex = 2;
 			this->tabPage3->Text = L"Courses";
 			// 
+			// listBox1
+			// 
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->ItemHeight = 18;
+			this->listBox1->Location = System::Drawing::Point(36, 80);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(440, 274);
+			this->listBox1->TabIndex = 5;
+			// 
 			// button4
 			// 
 			this->button4->Location = System::Drawing::Point(294, 8);
@@ -411,6 +421,7 @@ namespace Course_management {
 			this->button1->TabIndex = 4;
 			this->button1->Text = L"Go";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &studentform::button1_Click);
 			// 
 			// textBox1
 			// 
@@ -428,11 +439,11 @@ namespace Course_management {
 			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label9->ForeColor = System::Drawing::Color::Olive;
-			this->label9->Location = System::Drawing::Point(53, 275);
+			this->label9->Location = System::Drawing::Point(41, 279);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(114, 18);
+			this->label9->Size = System::Drawing::Size(96, 18);
 			this->label9->TabIndex = 2;
-			this->label9->Text = L"Select Faculty";
+			this->label9->Text = L"Select User";
 			// 
 			// dataGridView3
 			// 
@@ -486,6 +497,7 @@ namespace Course_management {
 			this->button3->TabIndex = 4;
 			this->button3->Text = L"Register";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &studentform::button3_Click);
 			// 
 			// comboBox3
 			// 
@@ -540,15 +552,7 @@ namespace Course_management {
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Logout";
 			this->button2->UseVisualStyleBackColor = true;
-			// 
-			// listBox1
-			// 
-			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 18;
-			this->listBox1->Location = System::Drawing::Point(36, 80);
-			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(440, 274);
-			this->listBox1->TabIndex = 5;
+			this->button2->Click += gcnew System::EventHandler(this, &studentform::button2_Click);
 			// 
 			// studentform
 			// 
@@ -606,12 +610,12 @@ private: System::Void label6_Click(System::Object^  sender, System::EventArgs^  
 			 dataGridView1->DataSource=ds1;
 			 dataGridView1->DataMember="std";
 			 dataGridView1->Refresh();
-			 auto da2=gcnew MySqlDataAdapter("Select course_management.courses_list.name,course_management.courses_list.course_no,course_management.courses_list.year from course_management.courses_list,course_management.registrations where course_management.registrations.userid='"+userid+"' and course_management.courses_list.columnname=course_management.registrations.coursecolumnname;",con);
+			 /*auto da2=gcnew MySqlDataAdapter("Select course_management.courses_list.name,course_management.courses_list.course_no,course_management.courses_list.year from course_management.courses_list,course_management.registrations where course_management.registrations.userid='"+userid+"' and course_management.courses_list.columnname=course_management.registrations.coursecolumnname;",con);
 			 auto ds2=gcnew DataSet;
 			 da2->Fill(ds2,"std");
 			 dataGridView2->DataSource=ds2;
 			 dataGridView2->DataMember="std";
-			 dataGridView2->Refresh();
+			 dataGridView2->Refresh();*/
 			 auto da3=gcnew MySqlDataAdapter("Select `from`,`to`,time,description from course_management.messages where `to`='all' or `to`='"+userid+"';",con);
 			 auto ds3=gcnew DataSet;
 			 da3->Fill(ds3,"std");
@@ -640,6 +644,40 @@ private: System::Void label6_Click(System::Object^  sender, System::EventArgs^  
 				 //comboBox1->Items->Add(reader->GetString(2));
 			 }
 			 con->Close();
+			 MySqlCommand^ cmd1 = gcnew MySqlCommand("Select course_management.courses_list.name,course_management.courses_list.course_no,course_management.courses_list.year from course_management.courses_list,course_management.registrations where course_management.registrations.userid='"+userid+"' and course_management.courses_list.columnname=course_management.registrations.coursecolumnname;",con);
+			 con->Open();
+			 reader=cmd1->ExecuteReader();
+			 while(reader->Read())
+			 {
+				 comboBox1->Items->Add((reader->GetString(1))+","+(reader->GetString(2)));
+				 /*comboBox2->Items->Add((reader->GetString(1))+","+(reader->GetString(2)));
+				 comboBox4->Items->Add((reader->GetString(1))+","+(reader->GetString(2)));*/
+			 }
+			 con->Close();
+			 MySqlCommand^ cmd4 = gcnew MySqlCommand("Select username from course_management.student_list;",con);
+			 con->Open();
+			 reader=cmd4->ExecuteReader();
+			 while(reader->Read())
+			 {
+				 comboBox2->Items->Add(reader->GetString(0));
+			 }
+			 con->Close();
+			 MySqlCommand^ cmd2 = gcnew MySqlCommand("Select username from course_management.faculty_list;",con);
+			 con->Open();
+			 reader=cmd2->ExecuteReader();
+			 while(reader->Read())
+			 {
+				 comboBox2->Items->Add(reader->GetString(0));
+			 }
+			 con->Close();
+			 MySqlCommand^ cmd3 = gcnew MySqlCommand("Select username from course_management.admin_list;",con);
+			 con->Open();
+			 reader=cmd3->ExecuteReader();
+			 while(reader->Read())
+			 {
+				 comboBox2->Items->Add(reader->GetString(0));
+			 }
+			 con->Close();
 			 }
 			 catch(Exception^ ex)
 			 {					MessageBox::Show(ex->Message);}
@@ -654,6 +692,7 @@ private: System::Void linkLabel2_LinkClicked(System::Object^  sender, System::Wi
 		 }
 private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) 
 		 {
+			 try{
 			 String^ delimStr = ",";
 			 String^ k =  comboBox1->Text;
 			 array<String^>^ words;
@@ -666,6 +705,55 @@ private: System::Void button4_Click(System::Object^  sender, System::EventArgs^ 
 				listBox1->Items->Add( String::Format( dir[i], i ) );
 				
 			}	
+			 }
+			 catch(Exception^ ex)
+			 {	MessageBox::Show(ex->Message);}
+		 }
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+			 studentform::Close();
+		 }
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+			 			 // connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
+
+			 try{
+			 DateTime now=DateTime::Now;
+			 String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
+			 MySqlConnection^ con=gcnew MySqlConnection(connectstr);
+			 MySqlCommand^ cmd=gcnew MySqlCommand("INSERT INTO course_management.messages (`from`, `to`, `description`, `time`) VALUES ('"+userid+"', '"+comboBox2->Text+"', '"+textBox1->Text+"', '"+now.ToString("yyyy-MM-dd HH:mm:ss")+"');",con);
+			 con->Open();
+			 cmd->ExecuteNonQuery();
+			 con->Close();
+			 }
+			 catch(Exception^ ex)
+			 {			 MessageBox::Show(ex->Message);}
+		 }
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+			 // connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
+			 try{
+				 String^ delimStr = ",";
+			 String^ k =  comboBox3->Text;
+			 array<String^>^ words;
+			 array<Char>^ delimiter = delimStr->ToCharArray();
+			 words = k->Split(delimiter);
+			 String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
+			 MySqlConnection^ con=gcnew MySqlConnection(connectstr);
+			 MySqlCommand^ cmd=gcnew MySqlCommand("UPDATE `course_management`.`student_list` SET `"+words[0]+"+"+words[1]+"`='1' WHERE `username`='"+userid+"';",con);
+			 con->Open();
+			 cmd->ExecuteNonQuery();
+			 con->Close();
+			 }
+			 catch(Exception^ ex)
+			 {			 MessageBox::Show(ex->Message);}
 		 }
 };
 }

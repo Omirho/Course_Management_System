@@ -19,7 +19,7 @@ namespace Course_management
 		label3->Text = "USERNAME*";
 		label4->Text = "PASSWORD*";
 		label5->Text = "DEPARTMENT*";
-		label6->Text = "COURSES";
+		//label6->Text = "COURSES";
 		label7->Hide();
 	}
 
@@ -30,18 +30,18 @@ namespace Course_management
 		username = textBox2->Text;
 		pass= textBox3->Text;
 		dept = textBox4->Text;
-		courses = textBox5 ->Text;
+//		courses = textBox5 ->Text;
 
 		if(String::IsNullOrEmpty(name)||String::IsNullOrEmpty(username)||String::IsNullOrEmpty(pass)||String::IsNullOrEmpty(dept))
 		{
 			label7->Show();
 			label7 ->Text = "* marked fields are required";
 		}
-		else if(pass->Length < 8)
+		else if(pass->Length < 6)
 		{
 			label7->Show();
 			//label4->Text= name;
-			label7->Text="passwords should be atleast 8 characters long";
+			label7->Text="passwords should be atleast 6 characters long";
 		}
 		else
 		{
@@ -68,7 +68,7 @@ namespace Course_management
 				MessageBox::Show(ex->Message);
 			}
 
-			if(MessageBox::Show("Your request has been sent to the admin for approval \n Do you wish to exit?","FORM CLOSING",MessageBoxButtons::YesNo,MessageBoxIcon::Question) == ::System::Windows::Forms::DialogResult::Yes)
+			if(MessageBox::Show("Do you wish to exit?","FORM CLOSING",MessageBoxButtons::YesNo,MessageBoxIcon::Question) == ::System::Windows::Forms::DialogResult::Yes)
 			{
 				//Application::Exit();
 			}

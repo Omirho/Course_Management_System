@@ -28,7 +28,7 @@ namespace Course_management
 			{
 				conDataBase->Open();
 				myReader=cmdDataBase->ExecuteReader();
-				int count=0;
+				count=0;
 				while(myReader->Read())
 				{   count = count+1;
 					name=myReader->GetString("Name");
@@ -104,12 +104,18 @@ namespace Course_management
 
 		String^ connectstr=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
 		MySqlConnection^ conDataBase=gcnew MySqlConnection(connectstr);
+		String^ connectstr1=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
+		MySqlConnection^ conDataBase1=gcnew MySqlConnection(connectstr1);
+		String^ connectstr2=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
+		MySqlConnection^ conDataBase2=gcnew MySqlConnection(connectstr2);
+		//MessageBox::Show(Convert::ToString(count));
 		for( i =0 ;i<=count;i++)
 		{
 			if(radio1[i]->Checked == true)
 			{
 				String^ uname=usrname[i];
 				MySqlCommand^ cmdDataBase=gcnew MySqlCommand("select * from course_management.signuprequests where username='"+uname+"';",conDataBase);
+				//MessageBox::Show("select * from course_management.signuprequests where username='"+uname+"';");
 				//MySqlCommand^ cmdDataBase2=gcnew MySqlCommand("insert into users.studentrecord where usertype='student';",conDataBase);
 				MySqlDataReader^ myReader;
 				try
@@ -118,18 +124,23 @@ namespace Course_management
 							myReader=cmdDataBase->ExecuteReader();
 							while (myReader->Read())
 							{
+								conDataBase1->Open();
 							String^	nme=myReader->GetString(1);
 							uname = myReader->GetString(2);
 							String^ pss=myReader->GetString(3);
 							String ^ rll = myReader->GetString(5);
 							String^ cmdText1 = "INSERT INTO course_management.student_list (`name`,`username`,`password`,`roll_number`) VALUES('"+nme+"','"+uname+"','"+pss+"','"+rll+"');";
-							MySqlCommand^ cmdDataBase1=gcnew MySqlCommand(cmdText1,conDataBase);
+							//MessageBox::Show(cmdText1);
+							MySqlCommand^ cmdDataBase1=gcnew MySqlCommand(cmdText1,conDataBase1);
 							cmdDataBase1->Prepare();
 							cmdDataBase1->ExecuteNonQuery();
+							conDataBase1->Close();
 						}
-						MySqlCommand^ cmdDataBase2=gcnew MySqlCommand("delete from course_management.signuprequests where username='"+uname+"';",conDataBase);
+						conDataBase2->Open();
+						MySqlCommand^ cmdDataBase2=gcnew MySqlCommand("delete from course_management.signuprequests where username='"+uname+"';",conDataBase2);
 						cmdDataBase2->Prepare();
 						cmdDataBase2->ExecuteNonQuery();
+						conDataBase2->Close();
 	
 				}
 			catch(Exception^ ex)
