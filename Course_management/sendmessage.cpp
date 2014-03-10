@@ -28,6 +28,12 @@ namespace Course_management
 
 		int key =1;
 
+		// connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
 
 		String^ connectstr=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
 		MySqlConnection^ conDataBase=gcnew MySqlConnection(connectstr);
@@ -75,6 +81,12 @@ namespace Course_management
 			//-------------store the results in a table holding approval requests------------------//
 			//---------- the table holds following fields----------//
 			//----------SNo.(primary key),from(name),username,usertype,password,status-----------//
+			// connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
 
 			DateTime now = DateTime::Now;
 			String^ connectstr=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";

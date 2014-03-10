@@ -13,6 +13,13 @@ namespace Course_management
 		{
 			String^ txtboxtxt;
 			//String* usrname[] = new String* [30];
+			// connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
+
 			String^ connectstr=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
 			MySqlConnection^ conDataBase=gcnew MySqlConnection(connectstr);
 			MySqlCommand^ cmdDataBase=gcnew MySqlCommand("SELECT * FROM course_management.signuprequests where usertype='Student';",conDataBase);
@@ -82,9 +89,16 @@ namespace Course_management
 		}
 	Void addStudent::button1_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		MessageBox::Show("hello");
+		//MessageBox::Show("hello");
 		int i;
 		//int action;
+		// connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
+
 		String^ connectstr=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
 		MySqlConnection^ conDataBase=gcnew MySqlConnection(connectstr);
 		for( i =0 ;i<=count;i++)
@@ -124,6 +138,14 @@ namespace Course_management
 		}
 		else if(radio2[i]->Checked== true)
 			{
+				// connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
+
+				try{
 				String^ uname=usrname[i];
 				MessageBox::Show(uname);
 				String^ connectstr=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
@@ -134,6 +156,9 @@ namespace Course_management
 				conDataBase->Open();
 				cmdDataBase->Prepare();
 				cmdDataBase->ExecuteNonQuery();
+				}
+				catch(Exception^ ex)
+				{					MessageBox::Show(ex->Message);}
 			}
 		}
 		this->Close();

@@ -111,14 +111,24 @@ namespace Course_management {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) 
 			 {
-				MessageBox::Show("Appointment Removed!!");
+				 // connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
+
+				try{	
 				String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
 				MySqlConnection^ con=gcnew MySqlConnection(connectstr);
 				MySqlCommand^ cmd=gcnew MySqlCommand("delete from course_management.calendar where user='"+userid+"' and date='"+dateTimePicker1->Value.ToString("yyyy-MM-dd")+"';",con);
 				con->Open();
 				cmd->ExecuteNonQuery();
+				MessageBox::Show("Appointment Removed!!");
 				this->Close();
-
+				}
+				catch(Exception^ ex)
+				{	MessageBox::Show(ex->Message);}
 			 }
 	};
 }

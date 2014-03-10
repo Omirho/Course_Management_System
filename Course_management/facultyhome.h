@@ -850,6 +850,14 @@ private: System::Void button9_Click(System::Object^  sender, System::EventArgs^ 
 			//Form1::Show();
 		}
 private: System::Void facultyhome_Load(System::Object^  sender, System::EventArgs^  e) {
+			 // connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
+
+			 try{
 			 label2->Text=name;
 			 String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
 			 MySqlConnection^ con=gcnew MySqlConnection(connectstr);
@@ -866,6 +874,13 @@ private: System::Void facultyhome_Load(System::Object^  sender, System::EventArg
 			 dataGridView2->DataSource=ds2;
 			 dataGridView2->DataMember="std";
 			 dataGridView2->Refresh();
+			 // connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
+
 			 auto da3=gcnew MySqlDataAdapter("Select `from`,`to`,time,description from course_management.messages where `to`='all' or `to`='"+userid+"';",con);
 			 auto ds3=gcnew DataSet;
 			 da3->Fill(ds3,"std");
@@ -920,7 +935,9 @@ private: System::Void facultyhome_Load(System::Object^  sender, System::EventArg
 				 comboBox3->Items->Add(reader->GetString(0));
 			 }
 			 con->Close();
-
+		 }
+		 catch(Exception^ ex)
+		 {			 MessageBox::Show(ex->Message);}
 		 
 		 
 		 
@@ -937,7 +954,14 @@ private: System::Void button5_Click(System::Object^  sender, System::EventArgs^ 
 		
 		 }
 private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
+			 // connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
 
+			 try{
 			 DateTime now=DateTime::Now;
 			 String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
 			 MySqlConnection^ con=gcnew MySqlConnection(connectstr);
@@ -945,7 +969,9 @@ private: System::Void button8_Click(System::Object^  sender, System::EventArgs^ 
 			 con->Open();
 			 cmd->ExecuteNonQuery();
 			 con->Close();
-
+			 }
+			 catch(Exception^ ex)
+			 {			 MessageBox::Show(ex->Message);}
 		 }
 };
 }

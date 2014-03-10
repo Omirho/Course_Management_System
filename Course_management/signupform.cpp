@@ -21,7 +21,7 @@ namespace Course_management
 		label8->Text="Roll Number";
 		label9->Text="Select Security Question?*";
 		label10->Text="Security answer*";
-	    comboBox1->Items->Add("Faculty");
+	    //comboBox1->Items->Add("Faculty");
 		comboBox1->Items->Add("Student");
 		comboBox2->Items->Add("what is the name of your first pet?");
 		comboBox2->Items->Add("what is the name of your first crush in IITG?");
@@ -45,11 +45,17 @@ namespace Course_management
 		//int roll=int::Parse(r);
 		String^ finalpass= textBox5->Text;int f1=0,f2=0,f=0;int key =1;
 
+		// connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
 
 		String^ connectstr=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
 		MySqlConnection^ conDataBase=gcnew MySqlConnection(connectstr);
-	    MySqlCommand^ cmdDataBase=gcnew MySqlCommand("SELECT * FROM course_management.signuprequests;",conDataBase);
 		MySqlDataReader^ myReader;
+	    MySqlCommand^ cmdDataBase=gcnew MySqlCommand("SELECT * FROM course_management.signuprequests;",conDataBase);
 		try
 		{
 			conDataBase->Open();
@@ -62,6 +68,64 @@ namespace Course_management
 					f=1;
 				key=key+1;
 			}
+			conDataBase->Close();
+
+		}
+		catch(Exception^ ex){
+			MessageBox::Show(ex->Message);
+		}
+		MySqlCommand^ cmdDataBase1=gcnew MySqlCommand("SELECT * FROM course_management.student_list;",conDataBase);
+		try
+		{
+			conDataBase->Open();
+			myReader=cmdDataBase1->ExecuteReader();
+
+			while(myReader->Read())
+			{
+				String^ use=myReader->GetString(2);
+				if(String::Compare(use,username)==0)
+					f=1;
+				//key=key+1;
+			}
+			conDataBase->Close();
+
+		}
+		catch(Exception^ ex){
+			MessageBox::Show(ex->Message);
+		}
+		MySqlCommand^ cmdDataBase2=gcnew MySqlCommand("SELECT * FROM course_management.faculty_list;",conDataBase);
+		try
+		{
+			conDataBase->Open();
+			myReader=cmdDataBase2->ExecuteReader();
+
+			while(myReader->Read())
+			{
+				String^ use=myReader->GetString(1);
+				if(String::Compare(use,username)==0)
+					f=1;
+				//key=key+1;
+			}
+			conDataBase->Close();
+
+		}
+		catch(Exception^ ex){
+			MessageBox::Show(ex->Message);
+		}
+		MySqlCommand^ cmdDataBase3=gcnew MySqlCommand("SELECT * FROM course_management.admin_list;",conDataBase);
+		try
+		{
+			conDataBase->Open();
+			myReader=cmdDataBase3->ExecuteReader();
+
+			while(myReader->Read())
+			{
+				String^ use=myReader->GetString(1);
+				if(String::Compare(use,username)==0)
+					f=1;
+				//key=key+1;
+			}
+			conDataBase->Close();
 
 		}
 		catch(Exception^ ex){
@@ -103,6 +167,12 @@ namespace Course_management
 			//---------- the table holds following fields----------//
 			//----------SNo.(primary key),from(name),username,usertype,password,status-----------//
 
+			// connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
 
 			String^ connectstr=L"datasource=localhost;port=3306;username=root;password=course;database=course_management";
 			MySqlConnection^ conDataBase=gcnew MySqlConnection(connectstr);
@@ -112,7 +182,7 @@ namespace Course_management
 			{
 				conDataBase->Open();
 				//String^ cmdText = "INSERT INTO users.signuprequests (`SNo.`,`Name`,`username`,`password`,`usertype`,`securityquestion`,`securityans`,`RollNo.`) VALUES('"+key+"','"+name+"','"+username+"','"+pass+"','"+usertype+"','"+securityques+"','"+ans+"','"+r+"');";
-				String^ cmdText = "INSERT INTO users.signuprequests (`SNo.`,`Name`,`username`,`password`,`usertype`,`RollNo.`) VALUES('"+key+"','"+name+"','"+username+"','"+pass+"','"+usertype+"','"+r+"');";
+				String^ cmdText = "INSERT INTO course_management.signuprequests (`SNo.`,`Name`,`username`,`password`,`usertype`,`RollNo.`) VALUES('"+key+"','"+name+"','"+username+"','"+pass+"','"+usertype+"','"+r+"');";
 				MySqlCommand^ cmdDataBase=gcnew MySqlCommand(cmdText,conDataBase);
 				cmdDataBase->Prepare();
 				cmdDataBase->ExecuteNonQuery();

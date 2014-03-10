@@ -126,6 +126,14 @@ namespace Course_management {
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) 
 			 {
 				 // save the contents of textbox and date to database
+				 // connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
+
+				 try{
 				String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
 				MySqlConnection^ con=gcnew MySqlConnection(connectstr);
 				String^ text=textBox1->Text;
@@ -138,14 +146,21 @@ namespace Course_management {
 				{
 					count=count+1;
 				}
+				con->Close();
 				if(count>0)
 					MessageBox::Show("Entry already exists..!");
 				else
 				{
+					con->Open();
 					MySqlCommand^ cmd=gcnew MySqlCommand("INSERT INTO course_management.calendar (`user`, `date`, `text`) VALUES ('"+userid+"', '"+dateTimePicker1->Value.ToString("yyyy-MM-dd")+"', '"+text+"');",con);
 					cmd->ExecuteNonQuery();
 					this->Close();
 				}
+				 }
+				 catch(Exception^ ex)
+				 {
+					MessageBox::Show(ex->Message);
+				 }
 
 			 }
 };

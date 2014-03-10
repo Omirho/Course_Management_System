@@ -24,6 +24,12 @@ namespace Course_management
 		try
 		{
 			//-------- code to load the data in datagrid view fields of the forms design------------//
+			// connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
 
 			MySqlDataAdapter^ sda = gcnew MySqlDataAdapter();
 			sda->SelectCommand = cmdDataBase;

@@ -273,6 +273,13 @@ namespace Course_management {
 
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e)
 		 {
+			 // connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
+
 			 String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
 			 MySqlConnection^ con=gcnew MySqlConnection(connectstr);
 			 MySqlDataReader^ reader;
@@ -306,6 +313,13 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			 }
 			if(String::Compare(comboBox1->Text,"FACULTY")==0)
 			{
+				// connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
+
 				 MySqlCommand^ cmd=gcnew MySqlCommand("SELECT name FROM course_management.faculty_list WHERE username=\'"+userid+"\' and password=\'"+pass+"\';",con);
 				 try
 				 {
@@ -331,6 +345,13 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			}
 			if(String::Compare(comboBox1->Text,"STUDENT")==0)
 			{
+				// connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
+
 				MySqlCommand^ cmd=gcnew MySqlCommand("SELECT name FROM course_management.student_list WHERE username=\'"+userid+"\' and password=\'"+pass+"\';",con);
 				 try
 				 {

@@ -560,6 +560,14 @@ private: System::Void label6_Click(System::Object^  sender, System::EventArgs^  
 		 //change the name of label6(username) dynamically depending upon the username and password from the data base
 		 }
 	private: System::Void studentform_Load(System::Object^  sender, System::EventArgs^  e) {
+				 // connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
+
+				 try{
 				 label4->Text=name;
 				 label6->Text=userid;
 				 String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
@@ -583,6 +591,13 @@ private: System::Void label6_Click(System::Object^  sender, System::EventArgs^  
 			 dataGridView3->DataSource=ds3;
 			 dataGridView3->DataMember="std";
 			 dataGridView3->Refresh();
+			 // connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
+
 			 auto da4=gcnew MySqlDataAdapter("Select `name`,`department`,course_no,year from course_management.courses_list;",con);
 			 auto ds4=gcnew DataSet;
 			 da4->Fill(ds4,"std");
@@ -598,6 +613,9 @@ private: System::Void label6_Click(System::Object^  sender, System::EventArgs^  
 				 //comboBox1->Items->Add(reader->GetString(2));
 			 }
 			 con->Close();
+			 }
+			 catch(Exception^ ex)
+			 {					MessageBox::Show(ex->Message);}
 			 }
 private: System::Void linkLabel1_LinkClicked(System::Object^  sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^  e) {
 			 addentry^ obj = gcnew addentry(userid);

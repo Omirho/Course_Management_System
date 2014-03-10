@@ -204,11 +204,18 @@ namespace Course_management {
        return ;
       }
 
+	  // connectstr - string to connect to sql server
+// MySqlConnection - establishes connection
+// MySqlCommand - query to run on the sql server
+// ExecuteNonQuery - execute query on server
+// MySqlReader - reads data returned by query line by line
+// MySqlDataAdapter - reads all the data returned by query at once
+
       // Try to create the directory.
       DirectoryInfo^ di = Directory::CreateDirectory( path );
 	   String^ connectstr="server=localhost;port=3306;username=root;password=course;database=course_management";
 	  MySqlConnection^ con=gcnew MySqlConnection(connectstr);
-	  MySqlCommand^ cmd=gcnew MySqlCommand("INSERT INTO course_management.courses_list (`name`, `course_no`, `year` , `columnname`) VALUES ('"+textBox1->Text+"', '"+textBox2->Text+"', '"+textBox3->Text+"', '"+textBox2->Text+"+"+textBox3->Text+"');",con);
+	  MySqlCommand^ cmd=gcnew MySqlCommand("INSERT INTO course_management.courses_list (`name`, `course_no`, `year`, `columnname`, `department`) VALUES ('"+textBox1->Text+"', '"+textBox2->Text+"', '"+textBox3->Text+"', '"+textBox2->Text+"+"+textBox3->Text+"', '"+textBox4->Text+"');",con);
 	  MySqlCommand^ cmd1=gcnew MySqlCommand("INSERT INTO course_management.registrations (`userid`, `coursecolumnname`) VALUES ('"+userid+"', '"+textBox2->Text+"+"+textBox3->Text+"');",con);
 	  MySqlCommand^ cmd2=gcnew MySqlCommand("ALTER TABLE `course_management`.`student_list` ADD COLUMN `"+textBox2->Text+"+"+textBox3->Text+"` VARCHAR(90) NOT NULL DEFAULT 0 AFTER `department`;",con);
 	  con->Open();
