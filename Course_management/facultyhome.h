@@ -756,6 +756,7 @@ namespace Course_management {
 			this->ClientSize = System::Drawing::Size(776, 457);
 			this->Controls->Add(this->button9);
 			this->Controls->Add(this->tabControl1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->Name = L"facultyhome";
 			this->Text = L"facultyhome";

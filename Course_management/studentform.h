@@ -530,6 +530,7 @@ namespace Course_management {
 			this->ClientSize = System::Drawing::Size(850, 414);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->flowLayoutPanel1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->Name = L"studentform";
 			this->Text = L"studentform";

@@ -58,6 +58,7 @@ namespace Course_management {
 				radio1[i] = gcnew RadioButton;
 				radio2[i] = gcnew RadioButton;
 				label[i] = gcnew Label;
+				
 			}
 			name = "";
 			//company = "";
@@ -118,6 +119,9 @@ namespace Course_management {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->flowLayoutPanel1->BackColor = System::Drawing::Color::Transparent;
 			this->flowLayoutPanel1->FlowDirection = System::Windows::Forms::FlowDirection::TopDown;
+			this->flowLayoutPanel1->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->flowLayoutPanel1->ForeColor = System::Drawing::Color::LightYellow;
 			this->flowLayoutPanel1->Location = System::Drawing::Point(35, 39);
 			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
 			this->flowLayoutPanel1->Size = System::Drawing::Size(499, 231);
@@ -141,12 +145,12 @@ namespace Course_management {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::DarkGoldenrod;
 			this->label1->Location = System::Drawing::Point(186, 13);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(157, 19);
+			this->label1->Size = System::Drawing::Size(179, 18);
 			this->label1->TabIndex = 7;
 			this->label1->Text = L"PENDING REQUESTS";
 			// 
@@ -159,6 +163,7 @@ namespace Course_management {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->flowLayoutPanel1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->Name = L"addStudent";
 			this->Text = L"addStudent";

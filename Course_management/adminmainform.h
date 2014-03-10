@@ -69,7 +69,7 @@ namespace Course_management {
 			// 
 			// button1
 			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::Olive;
 			this->button1->Location = System::Drawing::Point(11, 162);
@@ -82,7 +82,7 @@ namespace Course_management {
 			// 
 			// button3
 			// 
-			this->button3->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::Color::Olive;
 			this->button3->Location = System::Drawing::Point(12, 203);
@@ -95,7 +95,7 @@ namespace Course_management {
 			// 
 			// button4
 			// 
-			this->button4->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->button4->ForeColor = System::Drawing::Color::Olive;
 			this->button4->Location = System::Drawing::Point(12, 253);
@@ -108,7 +108,7 @@ namespace Course_management {
 			// 
 			// button6
 			// 
-			this->button6->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+			this->button6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->button6->ForeColor = System::Drawing::Color::Olive;
 			this->button6->Location = System::Drawing::Point(11, 299);
@@ -140,6 +140,8 @@ namespace Course_management {
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->MaximizeBox = false;
 			this->Name = L"adminmainform";
 			this->Text = L"adminmainform";
 			this->Load += gcnew System::EventHandler(this, &adminmainform::adminmainform_Load);

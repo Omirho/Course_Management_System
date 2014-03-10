@@ -81,18 +81,18 @@ namespace Course_management {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(22, 220);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(87, 19);
+			this->label1->Size = System::Drawing::Size(93, 18);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Upload File";
 			// 
 			// button1
 			// 
 			this->button1->BackColor = System::Drawing::Color::Transparent;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->button1->Location = System::Drawing::Point(26, 242);
 			this->button1->Name = L"button1";
@@ -109,11 +109,11 @@ namespace Course_management {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(25, 9);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(110, 19);
+			this->label2->Size = System::Drawing::Size(120, 18);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Uploaded Files";
 			// 
@@ -138,13 +138,13 @@ namespace Course_management {
 			// 
 			// listBox1
 			// 
-			this->listBox1->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->listBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 19;
+			this->listBox1->ItemHeight = 18;
 			this->listBox1->Location = System::Drawing::Point(27, 38);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(557, 137);
+			this->listBox1->Size = System::Drawing::Size(557, 130);
 			this->listBox1->TabIndex = 5;
 			this->listBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &notes::listBox1_SelectedIndexChanged);
 			// 
@@ -159,7 +159,7 @@ namespace Course_management {
 			// button2
 			// 
 			this->button2->BackColor = System::Drawing::Color::Transparent;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->button2->Location = System::Drawing::Point(336, 244);
 			this->button2->Name = L"button2";
@@ -182,6 +182,7 @@ namespace Course_management {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->shapeContainer1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->Name = L"notes";
 			this->Text = L"notes";

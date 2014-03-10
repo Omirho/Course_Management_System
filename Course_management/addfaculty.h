@@ -95,12 +95,12 @@ namespace Course_management {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::Cyan;
 			this->label2->Location = System::Drawing::Point(29, 56);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(52, 19);
+			this->label2->Size = System::Drawing::Size(52, 18);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"label2";
 			// 
@@ -108,12 +108,12 @@ namespace Course_management {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::Cyan;
 			this->label3->Location = System::Drawing::Point(29, 92);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(52, 19);
+			this->label3->Size = System::Drawing::Size(52, 18);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"label3";
 			// 
@@ -121,12 +121,12 @@ namespace Course_management {
 			// 
 			this->label4->AutoSize = true;
 			this->label4->BackColor = System::Drawing::Color::Transparent;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::Cyan;
 			this->label4->Location = System::Drawing::Point(29, 138);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(52, 19);
+			this->label4->Size = System::Drawing::Size(52, 18);
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"label4";
 			// 
@@ -134,12 +134,12 @@ namespace Course_management {
 			// 
 			this->label5->AutoSize = true;
 			this->label5->BackColor = System::Drawing::Color::Transparent;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::Cyan;
 			this->label5->Location = System::Drawing::Point(29, 168);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(52, 19);
+			this->label5->Size = System::Drawing::Size(52, 18);
 			this->label5->TabIndex = 4;
 			this->label5->Text = L"label5";
 			// 
@@ -191,12 +191,12 @@ namespace Course_management {
 			// 
 			this->label6->AutoSize = true;
 			this->label6->BackColor = System::Drawing::Color::Transparent;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::Cyan;
 			this->label6->Location = System::Drawing::Point(29, 203);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(52, 19);
+			this->label6->Size = System::Drawing::Size(52, 18);
 			this->label6->TabIndex = 10;
 			this->label6->Text = L"label6";
 			// 
@@ -237,6 +237,7 @@ namespace Course_management {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->Name = L"addfaculty";
 			this->Text = L"addfaculty";

@@ -64,6 +64,9 @@
     <None Include="image545s.jpg">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="How-to-add-new-admin-in-Facebook-Page.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Course_management.cpp">
@@ -173,9 +176,6 @@
     <ClInclude Include="addStudent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="deletethisform.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="studentrecord.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -193,9 +193,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resX">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="facultyhome.resx">
@@ -226,6 +223,21 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="studentrecord.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addentry.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addfaculty.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addStudent.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sendmessage.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="signupform.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

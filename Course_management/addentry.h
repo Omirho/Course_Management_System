@@ -129,9 +129,11 @@ namespace Course_management {
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->Name = L"addentry";
 			this->Text = L"addentry";
+			this->Load += gcnew System::EventHandler(this, &addentry::addentry_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -158,17 +160,22 @@ namespace Course_management {
 				{
 					count=count+1;
 				}
+				con->Close();
 				if(count>0)
 					MessageBox::Show("Entry already exists..!");
 				else
 				{
+					con->Open();
 					MySqlCommand^ cmd=gcnew MySqlCommand("INSERT INTO course_management.calendar (`user`, `date`, `text`) VALUES ('"+userid+"', '"+dateTimePicker1->Value.ToString("yyyy-MM-dd")+"', '"+text+"');",con);
 					cmd->ExecuteNonQuery();
 					this->Close();
+					con->Close();
 				}
 				 }
 				 catch(Exception^ ex)
 				 {			 MessageBox::Show(ex->Message);}
 			 }
+private: System::Void addentry_Load(System::Object^  sender, System::EventArgs^  e) {
+		 }
 };
 }

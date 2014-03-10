@@ -98,6 +98,8 @@ namespace Course_management {
 			this->ClientSize = System::Drawing::Size(366, 323);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dataGridView1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->MaximizeBox = false;
 			this->Name = L"studentrecord";
 			this->Text = L"studentrecord";
 			this->Load += gcnew System::EventHandler(this, &studentrecord::studentrecord_Load);

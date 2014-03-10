@@ -107,13 +107,13 @@ namespace Course_management {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Wasco Sans", 12, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic) 
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic) 
 				| System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->label2->Location = System::Drawing::Point(336, 252);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(91, 20);
+			this->label2->Size = System::Drawing::Size(93, 20);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"UserName";
 			// 
@@ -121,13 +121,13 @@ namespace Course_management {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Wasco Sans", 12, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic) 
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, static_cast<System::Drawing::FontStyle>(((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic) 
 				| System::Drawing::FontStyle::Underline)), System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(255)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(255)));
 			this->label3->Location = System::Drawing::Point(338, 292);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(87, 20);
+			this->label3->Size = System::Drawing::Size(90, 20);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"PassWord";
 			// 
@@ -218,6 +218,7 @@ namespace Course_management {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->comboBox1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
 			this->Name = L"Form1";
 			this->Text = L"Home";

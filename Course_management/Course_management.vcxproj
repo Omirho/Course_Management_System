@@ -96,6 +96,7 @@
     <None Include="app.ico" />
     <None Include="cse_entrance.jpg" />
     <None Include="deptcse.jpg" />
+    <None Include="How-to-add-new-admin-in-Facebook-Page.jpg" />
     <None Include="image545s.jpg" />
     <None Include="images.jpg" />
     <None Include="images123.jpg" />
@@ -150,9 +151,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="AppointmentAdder.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="deletethisform.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="facultyhome.h">

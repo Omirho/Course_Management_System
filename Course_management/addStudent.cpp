@@ -38,6 +38,9 @@ namespace Course_management
 					 radio1[count]->Name = System::Convert::ToString(count); 
 					 radio2[count]->Name = System::Convert::ToString(count);
 					  label[count]->Text = txtboxtxt;
+					   label[count]->ForeColor = System::Drawing::Color::LightYellow;
+					 	label[count]->Font = (gcnew System::Drawing::Font(L"Miramonte", 11.25F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)), 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 					  radio1[count] -> Size =  System::Drawing::Size(100, 23);
 					   radio1[count]->Text = "ACCEPT REQUEST";
 					   radio2[count] -> Size =  System::Drawing::Size(100, 23);
@@ -49,9 +52,9 @@ namespace Course_management
 						  // | System::Windows::Forms::AnchorStyles::Right));
 					   int l = txtboxtxt->Length;
 					   label[count]->Size = System::Drawing::Size(600, 26);
-					   label[count]->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-						   static_cast<System::Byte>(0)));
-					   label[count]->ForeColor = System::Drawing::Color::Blue;
+					//   label[count]->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+						 //  static_cast<System::Byte>(0)));
+					  // label[count]->ForeColor = System::Drawing::Color::Blue;
 
 					  radio1[count]->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 					  radio2[count]->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
